@@ -35,7 +35,7 @@ old disks to go...
 
 [\*.bf][bf]: Various Brainfuck programs
 
-[bf]: https://github.com/JoostMolenaar/code/tree/master/bf
+[bf]: https://github.com/JoostMolenaar/code/tree/master/brainfuck
 
 ## C++ ##
 
