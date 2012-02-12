@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modelistic Software Ltd. (http://www.modelistic.com) -->
+<jme>
+	<diagram style="defaultProfile.diagramStyle.default" version="1.3.7">
+		<class yLocation="233" xLocation="454" project="explore3d" className="explore3d.groups.DirGroup"/>
+		<class yLocation="227" xLocation="55" project="explore3d" className="explore3d.groups.FileGroup"/>
+		<class yLocation="431" xLocation="630" project="explore3d" className="explore3d.groups.LabelGroup"/>
+		<class yLocation="232" xLocation="810" project="explore3d" className="explore3d.groups.UpGroup"/>
+		<class yLocation="-108" xLocation="383" project="explore3d" className="javax.media.j3d.TransformGroup"/>
+	</diagram>
+</jme>

@@ -1,0 +1,54 @@
+Explore3D: Java 1.5.0_06
+Explore3D: Java3D 1.3.1 OpenGL
+RoomScene: Creating 3D scene
+RoomScene: Creating universe
+RoomScene: Creating branch group
+DirectoryList: Scanning root directory
+DirectoryList: 9 directories, 0 files
+RoomScene: 0/6 right
+RoomScene: 1/6 left
+RoomScene: 2/6 front
+RoomScene: 3/6 back
+RoomScene: 4/6 floor
+RoomScene: 5/6 ceiling
+RoomScene: 6/6 done
+RoomScene: Adding scene to branch graph
+Explore3D: Creating AWT interface
+Explore3D: Done
+MouseLooker: Clicked C:\
+DirectoryList: Scanning directory C:\
+DirectoryList: 10 directories, 18 files
+RoomScene: Removing branch graph
+RoomScene: Collecting garbage
+RoomScene: Creating new scene
+RoomScene: 0/6 right
+RoomScene: 1/6 left
+RoomScene: 2/6 front
+RoomScene: 3/6 back
+RoomScene: 4/6 floor
+RoomScene: 5/6 ceiling
+RoomScene: 6/6 done
+RoomScene: Scene going live
+MouseLooker: Clicked C:\WINDOWS
+DirectoryList: Scanning directory C:\WINDOWS
+DirectoryList: 166 directories, 313 files
+RoomScene: Removing branch graph
+RoomScene: Collecting garbage
+RoomScene: Creating new scene
+RoomScene: 0/6 right
+RoomScene: 1/6 left
+RoomScene: 2/6 front
+RoomScene: 3/6 back
+RoomScene: 4/6 floor
+RoomScene: 5/6 ceiling
+RoomScene: 6/6 done
+RoomScene: Scene going live
+MouseLooker: Clicked C:\WINDOWS\system32
+DirectoryList: Scanning directory C:\WINDOWS\system32
+DirectoryList: 53 directories, 2205 files
+RoomScene: Removing branch graph
+RoomScene: Collecting garbage
+RoomScene: Creating new scene
+RoomScene: 0/6 right
+RoomScene: 1/6 left
+Exception in thread "J3D-BehaviorScheduler-1" java.lang.OutOfMemoryError: Java heap space

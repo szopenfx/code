@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<!--jar path="U:/svn/explore3d/explore3d.jar"/-->
+<jar path="C:/Documents and Settings/H.J. Janse/Bureaublad/techfreaks.nl/explore3d/explore3d.jar"/>
+<options 
+	buildIfNeeded="true" 
+	compress="true" 
+	descriptionLocation="/explore3d/jarfile.jardesc" 
+	exportErrors="true" exportWarnings="true" 
+	includeDirectoryEntries="false" 
+	overwrite="false" 
+	saveDescription="true" 
+	useSourceFolders="false"/>
+<manifest 
+	generateManifest="true" 
+	mainClassHandleIdentifier="=explore3d/&lt;explore3d{Explore3D.java[Explore3D" 
+	manifestLocation="" 
+	manifestVersion="1.0" 
+	reuseManifest="false" 
+	saveManifest="false" 
+	usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.behaviors"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.frames"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.shapes"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.themes"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.textures"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.scenes"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.progress"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.appearances"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d.groups"/>
+<javaElement handleIdentifier="=explore3d/&lt;explore3d"/>
+</selectedElements>
+</jardesc>

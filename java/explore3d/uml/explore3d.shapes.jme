@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modelistic Software Ltd. (http://www.modelistic.com) -->
+<jme>
+	<diagram style="defaultProfile.diagramStyle.default" version="1.3.7">
+		<class yLocation="126" xLocation="397" project="explore3d" className="explore3d.shapes.DoorShape"/>
+		<class yLocation="-76" xLocation="7" project="explore3d" className="explore3d.shapes.GenericFileShape"/>
+		<class yLocation="-36" xLocation="412" project="explore3d" className="explore3d.shapes.LabelShape"/>
+		<class yLocation="268" xLocation="142" project="explore3d" className="explore3d.shapes.PanelShape"/>
+		<class yLocation="139" xLocation="0" project="explore3d" className="explore3d.shapes.WindowShape"/>
+	</diagram>
+</jme>

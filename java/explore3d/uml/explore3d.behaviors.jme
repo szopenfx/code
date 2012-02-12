@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modelistic Software Ltd. (http://www.modelistic.com) -->
+<jme>
+	<diagram style="defaultProfile.diagramStyle.default" version="1.3.7">
+		<class yLocation="91" xLocation="61" project="explore3d" className="explore3d.behaviors.KeyNavigator"/>
+		<class yLocation="420" xLocation="370" project="explore3d" className="explore3d.behaviors.MouseLooker"/>
+	</diagram>
+</jme>
