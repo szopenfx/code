@@ -1,0 +1,2196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KISP</name>
+    </assembly>
+    <members>
+        <member name="T:KISP.Chess.HistoryDelegate">
+            <summary>
+            Delegate to add Chess history to the form
+            </summary>
+            <param name="Line">Line to be added to the form</param>
+        </member>
+        <member name="T:KISP.Chess.DisposeDelegate">
+            <summary>
+            Delegate to dispose the chessgame
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.ChessForm">
+            <summary>
+            Form that represents the chessgame
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.#ctor(KISP.Chess.ChessGame)">
+            <summary>
+            Constructor for chess form
+            </summary>
+            <param name="TheChessGame">Reference to chess game object</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.ChangePlayerToMoveLabel">
+            <summary>
+            Switch label that indicates whose move it is
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.ChessForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Event: Form loaded
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.MainTimer_Elapsed(System.Object,System.EventArgs)">
+            <summary>
+            Event: Timer tick elapsed
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.GetTimeSpan(System.DateTime,System.DateTime)">
+            <summary>
+            Calculate time span between two DateTime objects
+            </summary>
+            <param name="Time1">Moment A</param>
+            <param name="Time2">Moment B</param>
+            <returns>Difference in hours as a string</returns>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.ResetMoveTime">
+            <summary>
+            Reset move time to now
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.BuildBoard">
+            <summary>
+            Put board images on screen
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.SetBackGroundColor(KISP.Chess.Coordinate,System.Drawing.Color)">
+            <summary>
+            Set background color for a coordinate
+            </summary>
+            <param name="TheCoordinate">Coordinate of square</param>
+            <param name="TheColor">Color of square</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.RestoreBackgroundColor(KISP.Chess.Coordinate)">
+            <summary>
+            Set background color to original for a coordinate
+            </summary>
+            <param name="TheCoordinate">Coordinate to reset</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.ChessForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: User clicked on board
+            </summary>
+            <param name="Sender">Sending object</param>
+            <param name="Event">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.AddToHistory(System.String)">
+            <summary>
+            Add move to history listbox
+            </summary>
+            <param name="Line">Representation of move</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.DrawPieces">
+            <summary>
+            Draw pieces on board
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Btn_SendMessage_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: User clicked send message button
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Btn_Surrender_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: User clicked surrender button
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Kill">
+            <summary>
+            DESTRUYE! MATANDO GÜEROS!!!!
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Btn_Quit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: User clicked quit button
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>        
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Btn_OfferDraw_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: User clicked offer draw button
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.GetPromotionPieceType">
+            <summary>
+            Retrieve current promotion piece type
+            </summary>
+            <returns>PieceType for a valid promotion piece</returns>
+        </member>
+        <member name="F:KISP.Chess.ChessForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KISP.Chess.ChessForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Makes the TcpClient with the given parameters
+            </summary>
+            <param name="RemoteIP">IP of the remote host</param>
+            <param name="Port">Port to connect to</param>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.Get(System.String,System.Int32,System.Int64)">
+            <summary>
+            Gives the host the order to prepare the given file at the given port for streamreading
+            </summary>
+            <param name="FileName">The file that the server has to send</param>
+            <param name="Port">The port on which the server has to prepare the stream</param>
+            <param name="FileLength">Lenght of the file to get in bytes</param>
+            <returns>True if succeeded, false if not</returns>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.Search(System.String)">
+            <summary>
+            Gives the server the order to search for files with the given SearchString in the names
+            </summary>
+            <param name="SearchString">The searchstring</param>
+            <returns>XmlDocument containg the search results, empty XmlDocument if there was a connection error</returns>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.Identify">
+            <summary>
+            Orders the server to identify itself
+            </summary>
+            <returns>IdentifyObject containing remote IP and Name</returns>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.Chat(System.String,System.String,System.String)">
+            <summary>
+            Sends the given chat message to the server
+            </summary>
+            <param name="Visibility">public or private</param>
+            <param name="FromUsername">The username that send this message</param>
+            <param name="Message">The message itself</param>
+            <returns>true if the message was succesfully send, false if it failed</returns>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.InitGame(System.String,System.Int32)">
+            <summary>
+            Orders the server to iniate a game at the given port
+            </summary>
+            <param name="FromUsername">The username that wants to play the game</param>
+            <param name="Port">The port on which this client wants the server to iniate the game</param>
+            <returns>string with the remote users name</returns>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.AcceptGame(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="UserName"></param>
+            <param name="Port"></param>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.RejectGame(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="UserName"></param>
+            <param name="Port"></param>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.Dispose">
+            <summary>
+            Free's the resources for this object and closes all the network streams. iDisposable implementation
+            </summary>
+        </member>
+        <member name="T:KISP.Protocol.ProtocolWriter.IdentifyObject">
+            <summary>
+            Object used for peer identification
+            </summary>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolWriter.IdentifyObject.#ctor(System.String,System.String)">
+            <summary>
+            Sets the Name and IP
+            </summary>
+            <param name="IP">IP of the host</param>
+            <param name="Name">Name of the host</param>
+        </member>
+        <member name="P:KISP.Protocol.ProtocolWriter.IdentifyObject.IP">
+            <summary>
+            Gets the IP of the host
+            </summary>
+        </member>
+        <member name="P:KISP.Protocol.ProtocolWriter.IdentifyObject.Name">
+            <summary>
+            Gets the Name of the host
+            </summary>
+        </member>
+        <member name="T:KISP.Program">
+            <summary>
+            Hyper main class that creates the main class (Nexus)
+            </summary>
+        </member>
+        <member name="M:KISP.Program.Main(System.String[])">
+            <summary>
+            Ye'olde maine method, ARRRRR!
+            </summary>
+            <param name="args">Arguments</param>
+        </member>
+        <member name="M:KISP.Program.TestMainProtocol">
+            <summary>
+            Test main protocol
+            </summary>
+        </member>
+        <member name="M:KISP.Program.TestConfiguration">
+            <summary>
+            Test configuration object
+            </summary>
+        </member>
+        <member name="M:KISP.Program.TestSearch">
+            <summary>
+            Do a test search
+            </summary>
+        </member>
+        <member name="M:KISP.Program.TestMulticastSend">
+            <summary>
+            Try out multicast code
+            </summary>
+        </member>
+        <member name="M:KISP.Program.StartWindowsProgram">
+            <summary>
+            Start windows form
+            </summary>
+        </member>
+        <member name="T:KISP.HelpForm">
+            <summary>
+            Form to display the helpfile
+            </summary>
+        </member>
+        <member name="F:KISP.HelpForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KISP.HelpForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KISP.HelpForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KISP.HelpForm.#ctor">
+            <summary>
+            Constructor for the helpform
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.ChessGame">
+            <summary>
+            Class that represents everything there is to know about a chess game
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.#ctor(KISP.Chess.ChessProtocol,KISP.Chess.PlayerColor)">
+            <summary>
+            Create new chess game object
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.SendMessage(System.String)">
+            <summary>
+            Send chat message to opponent
+            </summary>
+            <param name="Line">Some witty comment</param>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.Surrender">
+            <summary>
+            Yield the game to opponent
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.EndGame">
+            <summary>
+            Abandon game
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.OfferDraw">
+            <summary>
+            Offer draw to opponent
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.SetChessInterface(KISP.Chess.ChessForm)">
+            <summary>
+            Set reference to externally created ChessForm
+            </summary>
+            <param name="TehChessForm">Reference to chess form object</param>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.CreateChessInterface">
+            <summary>
+            Create a ChessForm
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.ChangeColor">
+            <summary>
+            Switch player-to-move color
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.UserMove(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Do a move that was initiated by the user
+            </summary>
+            <param name="FromX">X coordinate</param>
+            <param name="FromY">Y coordinate</param>
+            <param name="ToX">X coordinate</param>
+            <param name="ToY">Y coordinate</param>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.PeerMove(KISP.Chess.Move)">
+            <summary>
+            Execute a move that was initiated by a peer
+            </summary>
+            <param name="m">Remote opponent sends a move</param>
+        </member>
+        <member name="M:KISP.Chess.ChessGame.Dispose">
+            <summary>
+            Dispose of the chess game and the chess form.
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.ChessGame.PromotionType">
+            <summary>
+            Promotion type property
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.ChessGame.PlayerToMove">
+            <summary>
+            Property: Current player to move
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.ChessGame.MyColor">
+            <summary>
+            Property: Own color
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.ChessGame.OtherColor">
+            <summary>
+            Property: Other's color
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.ChessGame.Board">
+            <summary>
+            Property: Board object
+            </summary>
+        </member>
+        <member name="T:KISP.Interface.Graphical.ChatMessageDelegate">
+            <summary>
+            Delegate for the Chatsmessage
+            </summary>
+            <param name="username">Username for the chatmessage</param>
+        </member>
+        <member name="T:KISP.Interface.Graphical.DownloadProgressDelegate">
+            <summary>
+            Delegate for the download progress
+            </summary>
+            <param name="FileName">Filename that has the progress</param>
+        </member>
+        <member name="T:KISP.Interface.Graphical.IncUploadDelegate">
+            <summary>
+            Delegate for increasing the upload
+            </summary>
+        </member>
+        <member name="T:KISP.Interface.Graphical.DecUploadDelegate">
+            <summary>
+            Delegate for decreasing the upload
+            </summary>
+        </member>
+        <member name="T:KISP.Interface.Graphical.ChessGameRequestDelegate">
+            <summary>
+            Delegate for requesting a chess game
+            </summary>
+            <param name="IsOk">Is the request accepted</param>
+            <param name="UserName">Username that sends the request</param>
+            <param name="port">Port to start the chessgame on</param>
+        </member>
+        <member name="T:KISP.Interface.Graphical.CreateChessFormDelegate">
+            <summary>
+            Delegate for creating a chessgame form
+            </summary>
+            <param name="OwningChessGame">The chessgame</param>
+        </member>
+        <member name="T:KISP.Interface.Graphical.GraphicalInterface">
+            <summary>
+            Graphical interface for KISP
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.#ctor(KISP.Nexus.Nexus)">
+            <summary>
+            Sets the Nexus pointer
+            </summary>
+            <param name="nexus"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.IncDownloads">
+            <summary>
+            Increase the counter on the number of concurrent downloads
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DecDownloads">
+            <summary>
+            Decrease the counter on the number of concurrent downloads
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.IncUploads">
+            <summary>
+            Increase the counter on the number of the concurrent uploads
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DecUploads">
+            <summary>
+            Decrease the counter on the number of the concurrent uploads
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.GraphicalInterface_Load(System.Object,System.EventArgs)">
+            <summary>
+            OnLoad eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.UpdateUserList(KISP.Nexus.PeerList)">
+            <summary>
+            Update the userlist in the Configuration tab
+            </summary>
+            <param name="NewList">The new userlist</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Add Peer button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Send Chat button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.AddUser(System.String)">
+            <summary>
+            Method to add a suer to the Names Listbox
+            </summary>
+            <param name="username">Username to be added</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ChatMessage(System.String)">
+            <summary>
+            Displays a chatmessage to on the form
+            </summary>
+            <param name="message">The message to be displayed</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DisplaySearchResult(System.String,System.Int64,System.String,System.String,System.String,System.String)">
+            <summary>
+            Display a search result on the Listview
+            </summary>
+            <param name="FileName">Filename</param>
+            <param name="Size">Size</param>
+            <param name="RemoteUserName">Username of the remote resource</param>
+            <param name="RemoteIP">IP of the remote user</param>
+            <param name="RemoteSource">Type of the remote source</param>
+            <param name="FileType">Type of the file</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DisplayFileDownload(System.String,System.Int64,System.String)">
+            <summary>
+            Display a new file download in the Listview
+            </summary>
+            <param name="FileName">Filename</param>
+            <param name="Size">Size</param>
+            <param name="RemoteIP">IP of the remote user</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DisplayFileUpload(System.String,System.String)">
+            <summary>
+            Increases the number of uploads
+            </summary>
+            <param name="FileName">FileName</param>
+            <param name="RemoteIP">Remote IP</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DeleteFileUpload">
+            <summary>
+            Decreases the number of uploads
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Search_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Search button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ListView_Search_DblClick(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for a doubleclick in the Search listview
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Get_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Get button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.DownloadCompleted(System.String)">
+            <summary>
+            Checks if a download is completed
+            </summary>
+            <param name="FileName">Filename of the file</param>
+            <returns>True if it is completed, false if not</returns>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.GetIndexForDownloadListView(System.String)">
+            <summary>
+            Get the index on the listview for the given filename
+            </summary>
+            <param name="FileName">Filename</param>
+            <returns>Index of the file in the listview, returns -1 if the filename was not present</returns>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ListView_Search_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Eventhandler for double click on the Search Listview
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Progress1KinFileDownload(System.String)">
+            <summary>
+            Add 1K to the download status of the given file
+            </summary>
+            <param name="FilePath">FilePath</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Delete_Peer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Delete a peer in the Nexus Peerlist
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ListView_Downloads_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Eventhandler for double click on the Downloads Listview
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.tabPage5_SizeChanged(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the resize of the MediaPlayer tabpage
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.aboutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the About menu item click. Shows the aboutform
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.exitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Exit menu item click. Exits KISP
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.playFileToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Play file menu item click. Plays a given file
+            in the internal mediaplayer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.openMyDownloadsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Open mydownloads item click. Opens an explorer window
+            with the path to the MyDownloads folder.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Scan_Peers_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Scan Peers button click. Scans the local net for peers
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Import_Peerlist_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Import Peerlist button. Imports a peerlist from
+            a local XML file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Btn_Download_Peerlist_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Download Peerlist button. Downloads a XML peerlist
+            from the net
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.panel2_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouseclick eventhandler for the mediaplayer (Right mouse button)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.MenuItem_Play_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Play menu item, plays a media file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.MenuItem_Pause_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Pause menu item. Pauses the mediaplayer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.MenuItem_Stop_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Stop menu item. Stops the mediaplayer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.playchessToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Play Chess menu item in the chat window. Initiates
+            a chess game start procedure with the peer.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ChessGameRequest(System.Boolean@,System.String,System.Int32)">
+            <summary>
+            Invites this user to play chess with a peer
+            </summary>
+            <param name="IsOk">Is the challenged game accepted?</param>
+            <param name="UserName">Username that requests the challenge</param>
+            <param name="port">Port on which to connect</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.CreateChessForm(KISP.Chess.ChessGame)">
+            <summary>
+            Creates a chessform
+            </summary>
+            <param name="TheChessGame">Pointer to the Chessgame</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.sendMotherToGoelagToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Send Mother To Goelag menu item. Sends peers mother
+            to the Goelag
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.hammerSickleToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the HammerSickle menu item. ASCII arts a hammer/sickle and chats it
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.helpToolStripMenuItem1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Eventhandler for the Help menu item click. Views the help window
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:KISP.Interface.Graphical.GraphicalInterface.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.GraphicalInterface.ShowMedia(System.String)">
+            <summary>
+            Plays the given mediafile in the internal mediaplayer
+            </summary>
+            <param name="FilePath">File to play</param>
+        </member>
+        <member name="T:KISP.Interface.Graphical.DownLoadItem">
+            <summary>
+            Represents a download item, has convert methods for all different views
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.DownLoadItem.#ctor(System.String[],System.Int64,KISP.Interface.Graphical.GraphicalInterface)">
+            <summary>
+            Constructors, sets variables
+            </summary>
+            <param name="Items">The items in the listview</param>
+            <param name="FileSize">Size of the file</param>
+            <param name="_TheForm">Pointer to the form</param>
+        </member>
+        <member name="M:KISP.Interface.Graphical.DownLoadItem.Increment1K">
+            <summary>
+            The upload increased with 1K
+            </summary>
+        </member>
+        <member name="T:KISP.Interface.Graphical.SearchItem">
+            <summary>
+            Represents a search item
+            </summary>
+        </member>
+        <member name="M:KISP.Interface.Graphical.SearchItem.#ctor(System.String[],System.Int64)">
+            <summary>
+            Sets the filesize in Bytes for this item. This is needed when downloading
+            </summary>
+            <param name="Items">The items of the listview</param>
+            <param name="FileSize">Size of the file in bytes</param>
+        </member>
+        <member name="T:KISP.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:KISP.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:KISP.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:KISP.Nexus.PeerList">
+            <summary>
+            List of Peer objects
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.#ctor">
+            <summary>
+            Create new PeerList
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.DeletePeer(System.String)">
+            <summary>
+            Delete peer from list.
+            </summary>
+            <param name="IPAddress"></param>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.NewPeer(System.Net.IPAddress)">
+            <summary>
+            Add a new Peer to the system
+            </summary>
+            <param name="IPAddr">The IP address of the peer</param>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.SetPeerName(System.String,System.String)">
+            <summary>
+            Set user name of peer
+            </summary>
+            <param name="IPAddr">IP address of peer as a string</param>
+            <param name="Name">user name of peer</param>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.GetPeerIndex(System.String)">
+            <summary>
+            Get the index for the peer's name
+            </summary>
+            <param name="Name">Name for the peer</param>
+            <returns>integer index</returns>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.GetPeer(System.String)">
+            <summary>
+            Get a peer
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.GetPeer(System.Int32)">
+            <summary>
+            Get a peer from the list
+            </summary>
+            <param name="Index">Index from peer</param>
+            <returns>returns the peer</returns>
+        </member>
+        <member name="M:KISP.Nexus.PeerList.HasPeer(System.String)">
+            <summary>
+            See if an IP address is in the list
+            </summary>
+            <param name="IPAddr">IP address to search for</param>
+            <returns>True if IP address is in the list</returns>
+        </member>
+        <member name="P:KISP.Nexus.PeerList.Peers">
+            <summary>
+            Get array list so that it's easy to iterate thru all the Peer objects in it
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.#ctor(KISP.Chess.ChessGame)">
+            <summary>
+            Reference to chess game, mostly for chess board and some booleans
+            </summary>
+            <param name="chessgame"></param>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalMove(KISP.Chess.Move)">
+            <summary>
+            Check if a move is legal: it must be ANY move, be possible for that piece, not be
+            obstructed by another piece, it must be a legal capture (if any) and must relieve a 
+            check condition (if any).
+            </summary>
+            <param name="m">Move object</param>
+            <returns>Truee if the move is OK</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsAnyMoveAtAll(KISP.Chess.Move)">
+            <summary>
+            Returns true if the begin and end coordinates are not equal
+            </summary>
+            <param name="m">Move</param>
+            <returns>True if it's a move</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForPieceType(KISP.Chess.Move)">
+            <summary>
+            Returns true if move is legal for piece type
+            </summary>
+            <param name="m">Move</param>
+            <returns>True if move is possible for piece</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForKing(KISP.Chess.Move)">
+            <summary>
+            Check if move is legal for king
+            </summary>
+            <param name="m">Move</param>
+            <returns>True if m is a legal king move</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalCastling(KISP.Chess.Move)">
+            <summary>
+            Return true if m is a legal castling move for a king!
+            </summary>
+            <param name="m">Move</param>
+            <returns>True if m is a legal castling move</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForRook(System.Int32,System.Int32)">
+            <summary>
+            Check if move is legal for rook
+            </summary>
+            <param name="XDelta">Horizontal distance travelled</param>
+            <param name="YDelta">Vertical distance travelled</param>
+            <returns>True if m is a legal rook move</returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForBishop(System.Int32,System.Int32)">
+            <summary>
+            Check if move is legal for bishop
+            </summary>
+            <param name="XDelta">Horizontal distance travelled</param>
+            <param name="YDelta">Vertical distance travelled</param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForKnight(System.Int32,System.Int32)">
+            <summary>
+            Check if move is legal for knight
+            </summary>
+            <param name="XDelta">Horizontal distance travelled</param>
+            <param name="YDelta">Vertical distance travelled</param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForQueen(System.Int32,System.Int32)">
+            <summary>
+            Check if move is legal for queen
+            </summary>
+            <param name="XDelta"></param>
+            <param name="YDelta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalForPawn(KISP.Chess.Move)">
+            <summary>
+            Check if move is legal for pawn
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalPawnMove(KISP.Chess.Move)">
+            <summary>
+            Return true if the move is a legal pawn move
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalPawnCapture(KISP.Chess.Move)">
+            <summary>
+            Return true if the move is a legal capture
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsUnobstructed(KISP.Chess.Move)">
+            <summary>
+            Check if no pieces are between the start and end point of the move
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.IsLegalCapture(KISP.Chess.Move)">
+            <summary>
+            Return true if move is a legal capture or a move to an empty spot
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.RelievesCheck(KISP.Chess.Move)">
+            <summary>
+            Return true if move relieves check condition or true if there was no check condition
+            to begin with
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingIsNowInCheck">
+            <summary>
+            Returns true if the king is in check in this board posiiton
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingWillBeInCheck(KISP.Chess.Move)">
+            <summary>
+            Returns true if the king will be in check at the end of the move
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingInCheckByRook(KISP.Chess.Coordinate)">
+            <summary>
+            Returns true if king is in check because of a rook
+            </summary>
+            <param name="King"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingInCheckByBishop(KISP.Chess.Coordinate)">
+            <summary>
+            Returns true if king in check because of a bishop
+            </summary>
+            <param name="King"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingInCheckByQueen(KISP.Chess.Coordinate)">
+            <summary>
+            Returns true if king in check because of a queen
+            </summary>
+            <param name="King"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingInCheckByKnight(KISP.Chess.Coordinate)">
+            <summary>
+            Returns true if king in check because of a knight
+            </summary>
+            <param name="King"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.MoveChecker.KingInCheckByPawn(KISP.Chess.Coordinate)">
+            <summary>
+            Returns true if king in check because of a pawn
+            </summary>
+            <param name="King"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KISP.Binary.BinaryClient">
+            <summary>
+            Binary Socket client that get binary data from a server socket and creates
+            a new file.
+            </summary>
+        </member>
+        <member name="M:KISP.Binary.BinaryClient.#ctor(System.String,System.Int32,System.String,KISP.Nexus.Nexus,System.Int64)">
+            <summary>
+            Sets the necessary variables
+            </summary>
+            <param name="_ServerIP">IP of the server to connect to</param>
+            <param name="_Port">Port of the server to connect to</param>
+            <param name="_FileName">Filename where the data has to be saved</param>
+            <param name="_Nexus">Pointer to the central Nexus</param>
+            <param name="_FileLength">The raw binary file lengt of the file to be received</param>
+        </member>
+        <member name="M:KISP.Binary.BinaryClient.ReceiveFile">
+            <summary>
+            Connects to the server and creates the local resource
+            </summary>
+        </member>
+        <member name="T:KISP.Multicast.Multicast">
+            <summary>
+            Class for sending multicast messages
+            </summary>
+        </member>
+        <member name="M:KISP.Multicast.Multicast.#ctor(KISP.Nexus.Nexus,System.Boolean,System.Boolean)">
+            <summary>
+            Create Multicast object
+            </summary>
+            <param name="nexus">Nexus object so that multicasts from peers can be handled</param>
+            <param name="read">Create in read mode</param>
+            <param name="write">Create in write mode</param>
+        </member>
+        <member name="M:KISP.Multicast.Multicast.CreateWriteMulticast">
+            <summary>
+            Create multicast writer socket
+            </summary>
+        </member>
+        <member name="M:KISP.Multicast.Multicast.CreateReadMulticast">
+            <summary>
+            Create multicast reader socket
+            </summary>
+        </member>
+        <member name="M:KISP.Multicast.Multicast.DoWriteMulticast">
+            <summary>
+            Thread: send IP address to multicast address every so often
+            </summary>
+        </member>
+        <member name="M:KISP.Multicast.Multicast.DoReadMulticast">
+            <summary>
+            Thread: do something when somebody sends IP address
+            </summary>
+        </member>
+        <member name="T:KISP.AboutForm">
+            <summary>
+            Part of the AboutForm
+            </summary>
+        </member>
+        <member name="M:KISP.AboutForm.#ctor">
+            <summary>
+            Construct About form
+            </summary>
+        </member>
+        <member name="M:KISP.AboutForm.Btn_Close_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event: button close clicked
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event information</param>
+        </member>
+        <member name="F:KISP.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KISP.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KISP.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:KISP.Nexus.Configuration">
+            <summary>
+            Singleton class that retrieves configuration from an XML file through static methods
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.#ctor(System.String)">
+            <summary>
+            Create new Configuration object
+            </summary>
+            <param name="ConfigFilename"></param>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.Username">
+            <summary>
+            Get user name
+            </summary>
+            <returns>User name</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.ProtocolPort">
+            <summary>
+            Get protocol port
+            </summary>
+            <returns>Protocol port</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.DownloadDir">
+            <summary>
+            Get download directory
+            </summary>
+            <returns>Download directory</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.ShareCount">
+            <summary>
+            Get number of shares
+            </summary>
+            <returns>Number of shares</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.ShareType(System.Int32)">
+            <summary>
+            Get share type
+            </summary>
+            <param name="Index">Index of share</param>
+            <returns>Share type</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.LocalShareDir(System.Int32)">
+            <summary>
+            Get local share directory
+            </summary>
+            <param name="Index">Index of share</param>
+            <returns>Local share directory</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.FTPShareUsername(System.Int32)">
+            <summary>
+            Get FTP share user name
+            </summary>
+            <param name="Index">Index of share</param>
+            <returns>FTP share user name</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.FTPSharePassword(System.Int32)">
+            <summary>
+            Get FTP share password - be careful, kids! no encryption
+            </summary>
+            <param name="Index">Index of share</param>
+            <returns>FTP share password</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.FTPShareAddress(System.Int32)">
+            <summary>
+            Get FTP share address
+            </summary>
+            <param name="Index">Index of share</param>
+            <returns>FTP share address</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.MulticastAddress">
+            <summary>
+            Get multicass address
+            </summary>
+            <returns>Multicast address</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.MulticastPort">
+            <summary>
+            Get multicast port
+            </summary>
+            <returns>Multicast port</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.MulticastInterval">
+            <summary>
+            Get multicast interval
+            </summary>
+            <returns>Multicast interval</returns>
+        </member>
+        <member name="M:KISP.Nexus.Configuration.ChessPort">
+            <summary>
+            Get chess protocol port
+            </summary>
+            <returns>Chess protocol port</returns>
+        </member>
+        <member name="P:KISP.Nexus.Configuration.Instance">
+            <summary>
+            Get an instance of Configuration; create it if necessary.
+            </summary>
+            <returns>The singleton Configuration instance</returns>
+        </member>
+        <member name="T:KISP.Protocol.Protocol">
+            <summary>
+            KISP protocol handler
+            </summary>
+        </member>
+        <member name="M:KISP.Protocol.Protocol.#ctor(System.Int32,KISP.Nexus.Nexus)">
+            <summary>
+            Sets the protocol port, and starts a new Thread with the Listen() method
+            </summary>
+            <param name="ProtocolPort">Port to listen to</param>
+            <param name="PassedNexusPointer">Pointer to Nexus object</param>
+        </member>
+        <member name="M:KISP.Protocol.Protocol.Listen">
+            <summary>
+            Listens at the _ProtocolPort for connections. If there is a new connection, a new ProtocolHandler
+            object is made, and that objects HandleSocket() is invoked in a new thread.
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.ChessException">
+            <summary>
+            Exception class for problems related to chess
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessException.#ctor(System.String)">
+            <summary>
+            The nice constructor that only calls the base constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:KISP.Chess.PieceType">
+            <summary>
+            Enumeration for defining a piece; NONE is used when a move does not end in a promotion
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.Pawn">
+            <summary>
+            This is a pawn
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.Rook">
+            <summary>
+            This is a rook
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.Knight">
+            <summary>
+            We are the knights who say, NIE!
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.Bishop">
+            <summary>
+            This is a bishop
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.Queen">
+            <summary>
+            The queen 
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.King">
+            <summary>
+            The king
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PieceType.NONE">
+            <summary>
+            No piece
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.PlayerColor">
+            <summary>
+            Enumeration for defining the color of a player
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PlayerColor.White">
+            <summary>
+            The color of one player
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.PlayerColor.Black">
+            <summary>
+            The color of another player
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.Piece">
+            <summary>
+            Class that represents a piece
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.Piece._Type">
+            <summary>
+            Type of piece
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.Piece._Color">
+            <summary>
+            Color of piece
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Piece.#ctor(KISP.Chess.PieceType,KISP.Chess.PlayerColor)">
+            <summary>
+            Create a piece from a Piece Type and a Player Color
+            </summary>
+            <param name="NewType">Type of piece</param>
+            <param name="NewColor">Color of piece</param>
+        </member>
+        <member name="M:KISP.Chess.Piece.ToString">
+            <summary>
+            String representation of piece
+            </summary>
+            <returns>String that represents the piece</returns>
+        </member>
+        <member name="P:KISP.Chess.Piece.Type">
+            <summary>
+            PieceType property
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Piece.Color">
+            <summary>
+            PlayerColor property
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.Coordinate">
+            <summary>
+            This class represents a coordinate on the chess board.
+            Coordinate can be set by chess coordinates (e.g., A2) or by index coordinate (e.g.,
+            x=1, y=0). Coordinates can also be converted from and to screen coordinates for either
+            black or white; chess/A2 = index/x:0,y:2 = black screen/x:7,y:2 = white screen/x:0,y:6.
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.#ctor(System.String)">
+            <summary>
+            Create Coordinate from Chess notation
+            </summary>
+            <param name="ChessCoord">String representation of chess coordinate</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create coordinate from Indices
+            </summary>
+            <param name="IndexX">X index</param>
+            <param name="IndexY">Y index</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.#ctor(KISP.Chess.Coordinate)">
+            <summary>
+            Create coordinate from another coordinate
+            </summary>
+            <param name="Coord">Other coordinate to take values from</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ToString">
+            <summary>
+            Return string representation of coordinate
+            </summary>
+            <returns>String representation of coordinate</returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ToChessCoord">
+            <summary>
+            Convert index coordinate to chess coordinate
+            </summary>
+            <returns>String representation of coordinate</returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.Equals(System.Object)">
+            <summary>
+            Compare the coordinates
+            </summary>
+            <param name="obj">Object to compare to</param>
+            <returns>True of coordinates are equal</returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.FromScreen(KISP.Chess.PlayerColor)">
+            <summary>
+            Convert a generic screen coordinate to index coordinate
+            </summary>
+            <param name="playercolor">Color of player to convert for</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ToScreen(KISP.Chess.PlayerColor)">
+            <summary>
+            Convert index coordinate to a screen coordinate
+            </summary>
+            <param name="playercolor">Color of player to convert for</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.FromBlackScreen(System.Int32,System.Int32)">
+            <summary>
+            Convert black screen coordinate to index coordinate
+            </summary>
+            <param name="x">Index X</param>
+            <param name="y">Index Y</param>
+            <returns>Coordinate with appropriate values</returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.FromBlackScreen">
+            <summary>
+            Convert black screen coordinate to index coordinate
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ToBlackScreen">
+            <summary>
+            Convert index coordinate to black screen coordinate
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.FromWhiteScreen(System.Int32,System.Int32)">
+            <summary>
+            Convert white screen coordinate to index coordinate
+            </summary>
+            <param name="x">Index X</param>
+            <param name="y">Index Y</param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.FromWhiteScreen">
+            <summary>
+            Convert white screen coordinate to index coordinate
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ToWhiteScreen">
+            <summary>
+            Convert index coordinate to white screen coordinate
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.Delta(KISP.Chess.Coordinate,System.Int32@,System.Int32@)">
+            <summary>
+            Calculate the distances the piece traveled
+            </summary>
+            <param name="Other">Another coordinate</param>
+            <param name="XDelta">Horizontal distance</param>
+            <param name="YDelta">Vertical distance</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.AbsDelta(KISP.Chess.Coordinate,System.Int32@,System.Int32@)">
+            <summary>
+            Calculate the absolute distances the piece traveled
+            </summary>
+            <param name="Other">Another coordinate</param>
+            <param name="XDelta">Horizontal distance</param>
+            <param name="YDelta">Vertical distance</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.Direction(KISP.Chess.Coordinate,System.Int32@,System.Int32@)">
+            <summary>
+            Return a kind of a direction vector of -1, 0 or 1 for x and y
+            </summary>
+            <param name="Other">Another coordinate</param>
+            <param name="XDirection">Horizontal direction</param>
+            <param name="YDirection">Vertical direction</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.ChessToIndex(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            Convert from Chess to Index
+            </summary>
+            <param name="ChessCoord">Chess coordinate as string</param>
+            <param name="X">X Coordinate</param>
+            <param name="Y">Y Coordinate</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.IndexToChess(System.Int32,System.Int32)">
+            <summary>
+            Convert from Index to Chess
+            </summary>
+            <param name="X">X index coordinate</param>
+            <param name="Y">Y index coordinate</param>
+            <returns>Chess coordinate</returns>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.BlackScreenToIndex(System.Int32@,System.Int32@)">
+            <summary>
+            Convert from Black Screen to Index
+            </summary>
+            <param name="X">X coordinate (reference)</param>
+            <param name="Y">Y coordinate (reference)</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.IndexToBlackScreen(System.Int32@,System.Int32@)">
+            <summary>
+            Convert from Index to Black Screen
+            </summary>
+            <param name="X">X coordinate (reference)</param>
+            <param name="Y">Y coordinate (reference)</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.WhiteScreenToIndex(System.Int32@,System.Int32@)">
+            <summary>
+            Convert from White Screen to Index
+            </summary>
+            <param name="X">X coordinate (reference)</param>
+            <param name="Y">Y coordinate (reference)</param>
+        </member>
+        <member name="M:KISP.Chess.Coordinate.IndexToWhiteScreen(System.Int32@,System.Int32@)">
+            <summary>
+            Convert from Index to White Screen
+            </summary>
+            <param name="X">X coordinate (reference)</param>
+            <param name="Y">Y coordinate (reference)</param>
+        </member>
+        <member name="P:KISP.Chess.Coordinate.X">
+            <summary>
+            X coordinate property
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Coordinate.Y">
+            <summary>
+            Y coordinate property
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.Move">
+            <summary>
+            This class represents a move as a set of two coordinates, a promotion piece type 
+            the optional capture of a piece.
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Move.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Create Move from two Chess Coordinates and a Promotion string
+            </summary>
+            <param name="From">First chess coordinate</param>
+            <param name="To">Second chess coordinate</param>
+            <param name="Promotion">Type to promote to</param>
+        </member>
+        <member name="M:KISP.Chess.Move.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Create Move from two Index Coordinates and a Promotion string
+            </summary>
+            <param name="FromX">Source X coordinate</param>
+            <param name="FromY">SourceY coordinate</param>
+            <param name="ToX">Destination X coordinate</param>
+            <param name="ToY">Destination Y coordinate</param>
+            <param name="Promotion">Type to promote to</param>
+        </member>
+        <member name="M:KISP.Chess.Move.ToString">
+            <summary>
+            Return string representation of move
+            </summary>
+            <returns>String representation of move</returns>
+        </member>
+        <member name="M:KISP.Chess.Move.PieceStrToType(System.String)">
+            <summary>
+            Convert a Promotion string to a PieceType. This method reeks of bad OO.
+            </summary>
+            <param name="PieceID">ID string that represents a piece</param>
+            <returns>PieceType identifier</returns>
+        </member>
+        <member name="M:KISP.Chess.Move.Delta(System.Int32@,System.Int32@)">
+            <summary>
+            Calculate the distances the piece traveled
+            </summary>
+            <param name="XDelta">Return the horizontal difference of the move</param>
+            <param name="YDelta">Return the vertical difference of the move</param>
+        </member>
+        <member name="M:KISP.Chess.Move.AbsDelta(System.Int32@,System.Int32@)">
+            <summary>
+            Calculate the absolute distances the piece traveled
+            </summary>
+            <param name="XDelta">See Delta</param>
+            <param name="YDelta">See Delta</param>
+        </member>
+        <member name="M:KISP.Chess.Move.Direction(System.Int32@,System.Int32@)">
+            <summary>
+            Return a kind of a direction vector of -1, 0 or 1 for x and y
+            </summary>
+            <param name="XDirection">An int indicating the horizontal direction of the move</param>
+            <param name="YDirection">An int indicating the vertical direction of the move</param>
+        </member>
+        <member name="P:KISP.Chess.Move.From">
+            <summary>
+            From coordinate property
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Move.To">
+            <summary>
+            To coordinate property
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Move.Capture">
+            <summary>
+            The piece captured by this move [gets set on Board.ApplyMove]
+            </summary>
+        </member>
+        <member name="T:KISP.Chess.Board">
+            <summary>
+            Representation of a chess board
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Board.#ctor">
+            <summary>
+            Initialize by populating the board
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Board.PopulateBoard">
+            <summary>
+            Create new Array[8,8] for a Board and put pieces on it
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.Board.ApplyMove(KISP.Chess.Move)">
+            <summary>
+            Apply a move to the board
+            </summary>
+            <param name="m">Move to execute</param>
+        </member>
+        <member name="M:KISP.Chess.Board.UndoMove(KISP.Chess.Move)">
+            <summary>
+            Undo a move. Sherlock says: "This may require that the move was previously applied."
+            </summary>
+            <param name="m">The move</param>
+        </member>
+        <member name="M:KISP.Chess.Board.DoCastling(KISP.Chess.Move)">
+            <summary>
+            If the move is a castling move, find the tower and move it too
+            </summary>
+            <param name="m">The move</param>
+        </member>
+        <member name="M:KISP.Chess.Board.UpdateCastlingStatus(KISP.Chess.Move)">
+            <summary>
+            Update teh booleans of this class
+            </summary>
+            <param name="m">Move to take cues from</param>
+        </member>
+        <member name="M:KISP.Chess.Board.CountPiecesOfType(KISP.Chess.PieceType,KISP.Chess.PlayerColor)">
+            <summary>
+            Count all occurences of pieces with a given type and color
+            </summary>
+            <param name="pt">Piece type to search for</param>
+            <param name="pc">Player color to search for</param>
+            <returns>Count of ocurrences found</returns>
+        </member>
+        <member name="M:KISP.Chess.Board.FindPiecesOfType(KISP.Chess.PieceType,KISP.Chess.PlayerColor)">
+            <summary>
+            Return an array of coordinates of all pieces that match given criteria
+            </summary>
+            <param name="pt">Piece type</param>
+            <param name="pc">Player color</param>
+            <returns>Array of Coordinate objects</returns>
+        </member>
+        <member name="M:KISP.Chess.Board.ReturnPiecesBetween(KISP.Chess.Coordinate,KISP.Chess.Coordinate)">
+            <summary>
+            Return a list of pieces between coordinates A and B
+            </summary>
+            <param name="A">Start coordinate</param>
+            <param name="B">End coordinates</param>
+            <returns>Piece array; IIRC this array is 1 too long - sort of latent bug</returns>
+        </member>
+        <member name="P:KISP.Chess.Board.Item(System.Int32,System.Int32)">
+            <summary>
+            Default property by x and y
+            </summary>
+            <param name="y">Y Coordinate</param>
+            <param name="x">X Coordinate</param>
+            <returns>Piece object reference</returns>
+        </member>
+        <member name="P:KISP.Chess.Board.Item(KISP.Chess.Coordinate)">
+            <summary>
+            Default property by coordinate
+            </summary>
+            <param name="c">Coordinate</param>
+            <returns>Piece object reference</returns>
+        </member>
+        <member name="P:KISP.Chess.Board.WhiteCanCastleShort">
+            <summary>
+            Status of white short castling ability
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Board.WhiteCanCastleLong">
+            <summary>
+            Status of white long castling ability
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Board.BlackCanCastleShort">
+            <summary>
+            Status of black short castling ability
+            </summary>
+        </member>
+        <member name="P:KISP.Chess.Board.BlackCanCastleLong">
+            <summary>
+            Status of black long castling ability
+            </summary>
+        </member>
+        <member name="T:KISP.Binary.BinaryServer">
+            <summary>
+            Listens on a local port and sends a local binary file on connection
+            </summary>
+        </member>
+        <member name="M:KISP.Binary.BinaryServer.#ctor(System.Int32,System.String,KISP.Interface.Graphical.GraphicalInterface,KISP.Nexus.Nexus)">
+            <summary>
+            Sets the local variables
+            </summary>
+            <param name="_Port">Port to listen to</param>
+            <param name="_FileName">Local resource to be send</param>
+            <param name="_Interface">Pointer to the interface (for status updating)</param>
+            <param name="_Nexus">Pointer to Nexus</param>
+        </member>
+        <member name="M:KISP.Binary.BinaryServer.Start">
+            <summary>
+            Starts the binary server and waits for connections. If connected, the
+            server sends the raw binary data over the socket
+            </summary>
+        </member>
+        <member name="T:KISP.Search.Search">
+            <summary>
+            Container class for different types of search methods
+            </summary>
+        </member>
+        <member name="M:KISP.Search.Search.#ctor">
+            <summary>
+            Performs the search on all search methods
+            </summary>
+        </member>
+        <member name="M:KISP.Search.Search.Find(System.String)">
+            <summary>
+            Performs the actual search
+            </summary>
+            <param name="SearchString">The string to be searched for</param>
+            <returns>XMLDocument with the search results</returns>
+        </member>
+        <member name="T:KISP.Nexus.Peer">
+            <summary>
+            Class that represents a remote peer (his IP address)
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.Peer.#ctor(System.Net.IPAddress)">
+            <summary>
+            Construct Peer object
+            </summary>
+            <param name="IPAddr"></param>
+        </member>
+        <member name="M:KISP.Nexus.Peer.SetIP(System.String)">
+            <summary>
+            Set the IP address of the peer from a string representation
+            </summary>
+            <param name="IP"></param>
+        </member>
+        <member name="P:KISP.Nexus.Peer.UserName">
+            <summary>
+            The nick name of the user
+            </summary>
+        </member>
+        <member name="P:KISP.Nexus.Peer.IPAddr">
+            <summary>
+            The IP address of the peer
+            </summary>
+        </member>
+        <member name="T:KISP.Nexus.BullshitException">
+            <summary>
+            Exception for dealing with KISP errors
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.BullshitException.#ctor(System.String)">
+            <summary>
+            Construct the nice bullshit exception
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:KISP.Nexus.Nexus">
+            <summary>
+            Central Class of the program
+            </summary>
+        </member>
+        <member name="F:KISP.Nexus.Nexus._Interface">
+            <summary>
+            Reference to graphical interface
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.#ctor">
+            <summary>
+            Construct the nexus
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.Invoke(System.Delegate)">
+            <summary>
+            Invoke delegate in GUI thread
+            </summary>
+            <param name="m">Delegate</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.Invoke(System.Delegate,System.Object[])">
+            <summary>
+            Invoke delegate in GUI thread
+            </summary>
+            <param name="d">Delegate</param>
+            <param name="args">Parameters</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.SendFile(System.Net.IPAddress,System.String,System.Int32)">
+            <summary>
+            Download the given file from the given peer. Start a binaryserver on which to receive the file
+            </summary>
+            <param name="PeerIP">IP Address of the peer</param>
+            <param name="LocalPath">Path where the remote peer can find the file</param>
+            <param name="Port">Port on which to start the binaryserver</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.IsPortAvailable(System.Int32)">
+            <summary>
+            Check if the given port is available
+            </summary>
+            <param name="Port">Port number</param>
+            <returns>True if it is available, false if not</returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.GetNewDownloadPort">
+            <summary>
+            Returns a new available download port
+            </summary>
+            <returns>New available download port</returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.DeleteDownloadPort(System.Int32)">
+            <summary>
+            Delet a download port after it has been used
+            </summary>
+            <param name="Number">The port to be deleted</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.PerformSearchOnPeers(System.String)">
+            <summary>
+            Performs a search on peers, and displays the data
+            </summary>
+            <param name="SearchString">The string to be searched for</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.GetFile(System.Net.IPAddress,System.String,System.Int32,System.Int64)">
+            <summary>
+            Send a file to a given peer
+            </summary>
+            <param name="PeerIP">Address of the peer</param>
+            <param name="RemotePath">Path</param>
+            <param name="Port">Port</param>
+            <param name="FileLength">Length of file</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.ReceiveChatMessage(System.String,System.String,System.String)">
+            <summary>
+            Get a Chat message, and send it to the interface
+            </summary>
+            <param name="Visibility">Visibility of the message (public/private)</param>
+            <param name="FromUserName">The user that send this message</param>
+            <param name="Message">The message itself</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.AddPeer(System.String)">
+            <summary>
+            Add peer to Peer list and send "Identify yourself" command to peer
+            </summary>
+            <param name="IPAddr">IP address of peer as string</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.SendChatMessage(System.String)">
+            <summary>
+            Send chat message to everybody
+            </summary>
+            <param name="message">The message to send</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.DownloadPeerList(System.String)">
+            <summary>
+            Download a peerlist from a website
+            </summary>
+            <param name="URL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.LoadPeerList(System.Xml.XmlDocument)">
+            <summary>
+            Load a peerlist from a local resource
+            </summary>
+            <param name="PeerDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.GetWebRequest(System.String)">
+            <summary>
+            Get data from the net
+            </summary>
+            <param name="sURL">Url to the resource</param>
+            <returns>string with the resource</returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.CalcFromByte(System.String)">
+            <summary>
+            Calculate a string from a bytesize to a human readable format
+            </summary>
+            <param name="ByteSize">Size in bytes</param>
+            <returns>Size in human readable format</returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.GetLowestChessListenPort">
+            <summary>
+            Return the lowest available chess listen port
+            </summary>
+            <returns>Lowest available chess port</returns>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.InviteForChess(System.Int32)">
+            <summary>
+            Send an invitation for a game of chess to a peer
+            </summary>
+            <param name="UserIndex">Index of the user to be invited</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.ChessGameRequest(System.String,System.Int32)">
+            <summary>
+            Handle invitation for chess game by telling GraphicalInterface to handle the
+            invitation.
+            </summary>
+            <param name="username">Username of the user</param>
+            <param name="port">Port</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.AcceptChessGame(System.String,System.Int32)">
+            <summary>
+            Accept the chess invitation
+            </summary>
+            <param name="UserName">Username</param>
+            <param name="Port">Port</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.RejectChessGame(System.String,System.Int32)">
+            <summary>
+            Reject the chess invitation
+            </summary>
+            <param name="UserName">Username</param>
+            <param name="Port">Port</param>
+        </member>
+        <member name="M:KISP.Nexus.Nexus.CreateChessFormForChessGame(KISP.Chess.ChessGame)">
+            <summary>
+            Create a chess form in the main thread using a wretched delegate.
+            </summary>
+            <param name="cg">ChessGame</param>
+        </member>
+        <member name="P:KISP.Nexus.Nexus.Search">
+            <summary>
+            Gets the search object
+            </summary>
+        </member>
+        <member name="P:KISP.Nexus.Nexus.Protocol">
+            <summary>
+            Gets the Protocol
+            </summary>
+        </member>
+        <member name="P:KISP.Nexus.Nexus.Peers">
+            <summary>
+            Return the peer list
+            </summary>
+        </member>
+        <member name="P:KISP.Nexus.Nexus.Interface">
+            <summary>
+            IInterface object that will display status changes
+            </summary>
+        </member>
+        <member name="T:KISP.Nexus.Nexus.AddPeerDelegate">
+            <summary>
+            Delegate for adding a peer to the form and the peer list
+            </summary>
+            <param name="IPAddress">IP address of peer</param>
+        </member>
+        <member name="T:KISP.Chess.StringInputDialog">
+            <summary>
+            Provides a dialog that lets the user enter a string
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.StringInputDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.StringInputDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KISP.Chess.StringInputDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.StringInputDialog.Message">
+            <summary>
+            The Message that was entered
+            </summary>
+        </member>
+        <member name="F:KISP.Chess.StringInputDialog.OK">
+            <summary>
+            Was the dialogresult ok?
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.StringInputDialog.#ctor">
+            <summary>
+            Default Form constructor
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.StringInputDialog.BtnSend_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Send click button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:KISP.Chess.StringInputDialog.Btn_Cancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Cancel button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:KISP.Chess.ChessProtocol">
+            <summary>
+            Class that handles the chess protocol
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Connect to remote chess server
+            </summary>
+            <param name="RemoteIP">IP address of remote peer</param>
+            <param name="RemotePort">Port of remote peer</param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.#ctor(System.Int32,KISP.Nexus.Nexus)">
+            <summary>
+            Start chess server
+            </summary>
+            <param name="Port">Port for server</param>
+            <param name="Nexus">Reference to Nexus object</param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.Listen">
+            <summary>
+            Listen method to be executed by thread
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.Read">
+            <summary>
+            Read method to be executed by threads
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.Write(System.String)">
+            <summary>
+            Send command to peer
+            </summary>
+            <param name="Line">Any text</param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.SendMove(System.String,System.String,System.String)">
+            <summary>
+            Send move to peer
+            </summary>
+            <param name="From">From coordinate</param>
+            <param name="To">To coordinate</param>
+            <param name="Promotion">Promotion</param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.SendMove(System.String)">
+            <summary>
+            Send move to peer
+            </summary>
+            <param name="MoveString"></param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.SendMessage(System.String)">
+            <summary>
+            Send chat message to opponent
+            </summary>
+            <param name="Line">Some joke</param>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.Surrender">
+            <summary>
+            Send surrender command to opponnent
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.EndGame">
+            <summary>
+            User shuts down his game and gives win to opponent
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.OfferDraw">
+            <summary>
+            Send draw offer
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.DrawOk">
+            <summary>
+            Send draw offer acceptance
+            </summary>
+        </member>
+        <member name="M:KISP.Chess.ChessProtocol.DrawDeny">
+            <summary>
+            Send draw offer rejection
+            </summary>
+        </member>
+        <member name="T:KISP.Search.SearchLocal">
+            <summary>
+            Searches local resources
+            </summary>
+        </member>
+        <member name="M:KISP.Search.SearchLocal.#ctor(System.String)">
+            <summary>
+            Sets the default share directory
+            </summary>
+            <param name="DirPath">Path to directory to be shared</param>
+        </member>
+        <member name="M:KISP.Search.SearchLocal.Find(System.String,System.Xml.XmlDocument)">
+            <summary>
+            Searches the local directory for a given keyword
+            </summary>
+            <param name="SearchString">The keyword to be searched for</param>
+            <param name="FillinXmlDocument">The XML document to add the search result to</param>
+            <returns>Returns the new Xml document</returns>
+        </member>
+        <member name="M:KISP.Search.SearchLocal.Find(System.String,System.Xml.XmlDocument,System.IO.DirectoryInfo[])">
+            <summary>
+            Search method, used to find files in subdirectories
+            </summary>
+            <param name="SearchString">The string to be searched for</param>
+            <param name="FillinXmlDocument">The XML document to add the search results to</param>
+            <param name="SubDirInfoArray">Array with subdirs</param>
+            <returns>The new XML document with the added changes</returns>
+        </member>
+        <member name="T:KISP.Nexus.XMLProxy">
+            <summary>
+            This class wraps around an XML document and provides some useful methods for accessing the
+            XML data - see Configuration.cs for example usage
+            </summary>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.#ctor(System.String)">
+            <summary>
+            Create XML Proxy object
+            </summary>
+            <param name="Filename"></param>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.XPath(System.String)">
+            <summary>
+            Returns the value of the first child element of an element specified by an XPath expression
+            </summary>
+            <param name="XPath">An XPath expression</param>
+            <returns>String value of node</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.XPath(System.String,System.String)">
+            <summary>
+            Gets an XPath expression of the form /settings/user/name
+            </summary>
+            <param name="Section">The section, user in the example</param>
+            <param name="Item">The item, name in the example</param>
+            <returns>The value of the first child of the XPath expression</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.XPath(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets an XPath expression like /settings/section/listitem[2]/item
+            </summary>
+            <param name="Section">Section of list item</param>
+            <param name="ListItem">Name of list item</param>
+            <param name="Index">0-based index of list item</param>
+            <param name="Item"></param>
+            <returns>The value of the first child of the XPath expression</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.GetStr(System.String,System.String)">
+            <summary>
+            Get string from XML of form /settings/section/item
+            </summary>
+            <param name="Section">section</param>
+            <param name="Item">item</param>
+            <returns>string value of firstchild</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.GetInt(System.String,System.String)">
+            <summary>
+            Get int of form /settings/user/age
+            </summary>
+            <param name="Section">section, user in example</param>
+            <param name="Item">item, age in example</param>
+            <returns>value of firstchild</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.ListCount(System.String,System.String)">
+            <summary>
+            Get count of all nodes of form /settings/shares/share
+            </summary>
+            <param name="Section">section, shares in example</param>
+            <param name="ListItem">item, share in example</param>
+            <returns>node count of xpath expression</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.GetListStr(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Get string of form /settings/shares/share[2]/type
+            </summary>
+            <param name="Section">section, shares in example</param>
+            <param name="ListItem">list item, share in example</param>
+            <param name="Index">index, 2 in example (needs to be given as 0-based index!!)</param>
+            <param name="Item">item, type in example</param>
+            <returns>the value of the firstchild</returns>
+        </member>
+        <member name="M:KISP.Nexus.XMLProxy.GetListInt(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            As GetListStr, but returns int
+            </summary>
+        </member>
+        <member name="T:KISP.Protocol.ProtocolHandler">
+            <summary>
+            Handles protocol request
+            </summary>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolHandler.#ctor(System.Net.Sockets.Socket,KISP.Nexus.Nexus,System.Net.IPAddress)">
+            <summary>
+            Sets the ProtocolSocket
+            </summary>
+            <param name="PassedSocket">The socket to handle</param>
+            <param name="IP">IP that is handled</param>
+            <param name="PassedNexusPointer">Pointer to the Nexus</param>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolHandler.HandleSocket">
+            <summary>
+            Handles the ProtocolSocket, invokes HandleProtocolCommand() and returns the output to the Socket
+            </summary>
+        </member>
+        <member name="M:KISP.Protocol.ProtocolHandler.HandleProtocolCommand(System.String)">
+            <summary>
+            Handles a protocol command, and invokes the appropriate functions in the Nexus
+            </summary>
+            <param name="ProtocolCommand">The protocolcommand</param>
+            <returns>a string with a response to the protocolcommand</returns>
+        </member>
+    </members>
+</doc>

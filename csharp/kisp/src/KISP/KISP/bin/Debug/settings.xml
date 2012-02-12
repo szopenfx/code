@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<user>
+		<name>MyUserName</name>
+	</user>
+
+	<protocol>
+		<port>9876</port>
+		<downloaddir>C:\MyDownloadDir</downloaddir>
+	</protocol>
+
+	<shares>
+		<share>
+			<type>dir</type>
+			<dir>c:\downloads</dir>
+		</share>
+		<share>
+			<type>FTP</type>
+			<username>joost</username>
+			<password>blah</password>
+			<address>www.example.com:21</address>
+		</share>
+	</shares>
+
+	<multicast>
+		<address>224.224.224.224</address>
+		<port>9876</port>
+		<interval>1000</interval>
+	</multicast>
+
+	<chess>
+		<port>21345</port>
+	</chess>
+</settings>

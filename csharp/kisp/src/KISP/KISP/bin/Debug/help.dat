@@ -1,0 +1,134 @@
+
+ Kim Il Sung's Politburo 1.0				
+							
+ (C) 2006 Joost Molenaar, Michael van der Veeken & Chuck Norris	
+							
+ Vak: Netwerken/Client Server Technologie		
+
+Topics
+1. Adding Peers
+2. Deleting Peers
+3. Chatting
+4. Search
+5. Download
+6. Play Media
+7. What the FAQ
+8. Chuck Norris Facts
+
+
+1. Adding Peers
+
+Peers in the local network should be added automaticly using an
+UDP broadcast. Many ISP's block UDP broadcasts to the internet, so
+there are a few way's to manually add peers.
+
+To add a peer goto the tab 'options'. There you see some options.
+If you know the IP address of a peer, just fill it in in the 'Add Peer' box,
+and click 'Add'. To add multiple peers at one time, click 'Import Peerlist',
+and select an XML peerlist on your local harddrive. 
+
+You can also use 'Download Peerlist' to download and add a peerlist from our
+website.
+
+2. Deleting peers
+
+To delete a peer, just go to the 'options' tab, and select the peer you want to
+delete in the 'peers' listbox. Then press the 'delete' button.
+
+3. Chatting
+
+All known peers will be added to the chatroom automaticaly. To chat, just enter
+your message in the box on the bottom of the 'chat' tab, and press 'send'.
+
+4. Search
+
+To search for files on other peers, just go to the 'search' tab. Here you can 
+enter a search string. Click the 'search' button to perform the search. A list
+with all the found files will be displayed.
+
+5. Download
+To download a file, perform the above operation, and double-click the files you
+want to download. You can also select multiple files, by selecting a file and
+holding the SHIFT button while you select other files.
+
+6. Play media
+To play media, just double-click your finished download. The file will be
+automaticaly played by the build in mediaplayer. You can also select 'play file'
+from the 'file' menu, and select the file you wish to play. To pause or stop the
+the play, right-click the mediaplayer, and select 'pause' or 'stop'.
+
+
+7. What the FAQ
+
+Q: Why the hell did you build this? There are like 200 p2p networks already!
+A: We had to make a p2p client, without a centralized server for a course at
+   our school.
+
+Q: What parts of the program did Chuck Norris write?
+A: The whole program. Chuck Norris whispered the source code in our ear, and we
+   wrote it down. Technically, he wrote the entire program, he just dictated the
+   source code to us.
+
+Q: What is the capital of Assyria?
+A: I dont know that!
+
+Q: Who the hell are you guys?
+A: The incredible breathing man, and the incredible non-dying man!
+
+Q: What is the answer to live, the universe and everything?
+A: 42
+
+Q: What is the avarage air-velocity off a swallow?
+A: An African or a European one?
+
+
+Q: Who killed JFK?
+A: Elvis or Captain America, we don't yet
+
+Q: Can we mary you ?
+A: STFU! LOLOLOL!!!!11111oneoneone!!!111eleven!!!111
+
+8. Chuck Norris Facts
+
+When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris.
+
+Chuck Norris doesn't read books. He stares them down until he gets the information he wants.
+
+There is no theory of evolution. Just a list of creatures Chuck Norris has allowed to live.
+
+Outer space exists because it's afraid to be on the same planet with Chuck Norris.
+
+Chuck Norris does not sleep. He waits.
+
+Chuck Norris is currently suing NBC, claiming Law and Order are trademarked names for his left and right legs.
+
+Chuck Norris is the reason why Waldo is hiding.
+
+Chuck Norris counted to infinity - twice.
+
+There is no chin behind Chuck Norris’ beard. There is only another fist.
+
+When Chuck Norris does a pushup, he isn’t lifting himself up, he’s pushing the Earth down.
+
+Chuck Norris is so fast, he can run around the world and punch himself in the back of the head.
+
+Chuck Norris’ hand is the only hand that can beat a Royal Flush.
+
+There is no such thing as global warming. Chuck Norris was cold, so he turned the sun up.
+
+Chuck Norris can lead a horse to water AND make it drink.
+
+Chuck Norris doesn’t wear a watch, HE decides what time it is.
+
+Chuck Norris gave Mona Lisa that smile.
+
+Chuck Norris can slam a revolving door.
+
+Chuck Norris does not get frostbite. Chuck Norris bites frost
+
+Remember the Soviet Union? They decided to quit after watching a DeltaForce marathon on Satellite TV. 
+
+Contrary to popular belief, America is not a democracy, it is a Chucktatorship.
+
+
+
