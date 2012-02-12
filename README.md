@@ -10,41 +10,39 @@ This is what I've found (and documented here) so far:
 
 [kisp][ck]: Kim Il-Sung's Politbyuro, a P2P file share program with built-in chess game.
 
+[ck]: https://github.com/JoostMolenaar/code/tree/master/csharp/kisp
+
 ## Delphi ##
 
-bfide
+[bfide][db1]: Development environment for Brainfuck language
 
-brainfuck
+[brainfuck][db2]: Command-line interpreter for Brainfuck language
 
-dopewars
+[dopewars][dd]: Dope Wars
 
 lingo
 
 [lisp][dl]: A compiler for a LISP-like language called NUMP.
 
+[dl]: https://github.com/JoostMolenaar/code/tree/master/delphi/lisp
+
+[db1]: https://github.com/JoostMolenaar/code/tree/master/delphi/bfide
+
+[db2]: https://github.com/JoostMolenaar/code/tree/master/delphi/brainfuck
+
+[dd]: https://github.com/JoostMolenaar/code/tree/master/delphi/dopewars
+
 ## Java ##
 
-[checkers][jc]: A checkers game. ([Run it][jc-run])
+[checkers][jc]: A checkers game. ([Run checkers.jar][jc-run])
 
-[explore3d][je]: A 3d file system browser in Java3D. ([Run it][je-run])
+[explore3d][je]: A 3d file system browser in Java3D. ([Run explore3d.jar][je-run])
 
-[graphics][jg]: Some graphical scenes in Java3D. I especially like the colorful Möbius strip.
-([Run it][jg-run])
+[graphics][jg]: Some graphical scenes in Java3D. I especially like the colorful 
+Möbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][jg-run])
 
-[life][jl]: Conway's Game Of Life. ([2007 version][jl2007], [2008][jl2008] version, [run it][jl-run])
-
-## Python ##
-
-[knights][pk]: Calculates a knight's tour on a variously-sized chess boards.
-
-life
-
-[sudoku][ps]: A Sudoku solver that supports all kinds of weird variations on Sudoku.
-([2005][ps2005], [2008][ps2008])
-
-[ck]: https://github.com/JoostMolenaar/code/tree/master/csharp/kisp
-
-[dl]: https://github.com/JoostMolenaar/code/tree/master/delphi/lisp
+[life][jl]: Conway's Game Of Life. ([2007][jl2007], [2008][jl2008], 
+[Run life.jar][jl-run])
 
 [jc]: https://github.com/JoostMolenaar/code/tree/master/java/checkers
 [jc-run]: https://github.com/JoostMolenaar/code/blob/master/java/checkers/jar/checkers.jar?raw=true
@@ -60,7 +58,16 @@ life
 [jl2008]: https://github.com/JoostMolenaar/code/tree/1aefe018/python/life
 [jl-run]: https://github.com/JoostMolenaar/code/blob/master/java/life/life.jar?raw=true
 
-[pk]: https://github.com/JoostMolenaar/code/tree/master/python/knights
+## Python ##
+
+[knights][pk]: Calculates a knight's tour on a variously-sized chess boards.
+
+life
+
+[sudoku][ps]: A Sudoku solver that supports all kinds of weird variations on Sudoku.
+([2005][ps2005], [2008][ps2008])
+
+[pk]: https://github.com/joostmolenaar/code/tree/master/python/knights
 
 [ps]: https://github.com/JoostMolenaar/code/tree/master/python/sudoku
 [ps2005]: https://github.com/JoostMolenaar/code/tree/b83af382/python/sudoku
