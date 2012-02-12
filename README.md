@@ -4,21 +4,30 @@ Welcome to my code archive. I'm trying to gather as much
 of old code as I can find, if possible in chronological 
 order. A hellish task, if you ask me.
 
-This is what I've found (and documented here) so far:
+Some code was made with friends. MB, MD, MdJ, MvdV, JD: 
+I assume you're all O.K. with your code and other stuffs 
+sitting here.
+
+This is what I've found (and documented here) so far. It 
+includes games, experiments with graphics, compilers, 
+and a lot of brainfuck for some reason. I still have some 
+old disks to go...
 
 ## C# ##
 
-[kisp][ck]: Kim Il-Sung's Politbyuro, a P2P file share program with built-in chess game.
+[kisp][ck]: Kim Il-Sung's Politbyuro, a P2P file sharing
+program with built-in chess game.
 
 [ck]: https://github.com/JoostMolenaar/code/tree/master/csharp/kisp
 
 ## Delphi ##
 
-[bfide][db1]: Development environment for Brainfuck language
+[bfide][db1]: Development environment for Brainfuck language.
 
-[brainfuck][db2]: Command-line interpreter for Brainfuck language
+[brainfuck][db2]: Command-line interpreter for Brainfuck language.
 
-[dopewars][dd]: Dope Wars
+[dopewars][dd]: Dope Wars, with lots of crazy features like selling
+kidneys and colorful effects and cheats and whatnot.
 
 lingo
 
@@ -34,7 +43,7 @@ lingo
 
 ## Java ##
 
-[checkers][jc]: A checkers game. ([Run checkers.jar][jc-run])
+[checkers][jc]: A checkers game that plays much better than I do. ([Run checkers.jar][jc-run])
 
 [explore3d][je]: A 3d file system browser in Java3D. ([Run explore3d.jar][je-run])
 
