@@ -50,12 +50,12 @@ life
 [jg]: https://github.com/JoostMolenaar/code/tree/master/java/graphics
 
 [jl]: https://github.com/JoostMolenaar/code/tree/master/python/life
-[jl2007]: https://github.com/JoostMolenaar/code/tree/f6141aff
-[jl2008]: https://github.com/JoostMolenaar/code/tree/1aefe018
+[jl2007]: https://github.com/JoostMolenaar/code/tree/f6141aff/python/life
+[jl2008]: https://github.com/JoostMolenaar/code/tree/1aefe018/python/life
 
 [pk]: https://github.com/JoostMolenaar/code/tree/master/python/knights
 
 [ps]: https://github.com/JoostMolenaar/code/tree/master/python/sudoku
-[ps2005]: https://github.com/JoostMolenaar/code/tree/b83af382
-[ps2008]: https://github.com/JoostMolenaar/code/tree/9b65ec82
+[ps2005]: https://github.com/JoostMolenaar/code/tree/b83af382/python/sudoku
+[ps2008]: https://github.com/JoostMolenaar/code/tree/9b65ec82/python/sudoku
 
