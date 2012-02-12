@@ -15,10 +15,8 @@ old disks to go...
 
 ## Assembler ##
 
-[bfc][a-b1]: Brainfuck compiler
-
-[bfi][a-b2]: Brainfuck interpreter
-
+[bfc][a-b1]: Brainfuck compiler  
+[bfi][a-b2]: Brainfuck interpreter  
 [linux][a-l]: Experiments in Linux assembly
 
 [a-b1]: https://github.com/JoostMolenaar/code/tree/master/asm/bfc
@@ -39,8 +37,7 @@ old disks to go...
 
 ## C++ ##
 
-[observer][cpp-o]
-
+[observer][cpp-o]  
 [qt][cpp-qt]
 
 [cpp-o]: https://github.com/JoostMolenaar/code/tree/master/cpp/observer]
@@ -54,14 +51,10 @@ old disks to go...
 
 ## Delphi ##
 
-[bfide][d-b1]: Development environment for Brainfuck language.
-
-[brainfuck][d-b2]: Command-line interpreter for Brainfuck language.
-
-[dopewars][d-d]: Dope Wars, with lots of crazy features like selling kidneys and colorful effects and cheats and whatnot.
-
-[lingo][d-l1]: A Lingo game that supports 2-letter-Lingo. At least, a later version does.
-
+[bfide][d-b1]: Development environment for Brainfuck language.  
+[brainfuck][d-b2]: Command-line interpreter for Brainfuck language.  
+[dopewars][d-d]: Dope Wars, with lots of crazy features like selling kidneys and colorful effects and cheats and whatnot.  
+[lingo][d-l1]: A Lingo game that supports 2-letter-Lingo. At least, a later version does.  
 [lisp][d-l2]: A compiler for a LISP-like language called NUMP.
 
 [d-b1]: https://github.com/JoostMolenaar/code/tree/master/delphi/bfide
@@ -72,12 +65,9 @@ old disks to go...
 
 ## Java ##
 
-[checkers][j-c]: A checkers game that plays much better than I do. ([Run checkers.jar][j-c-run])
-
-[explore3d][j-e]: A 3d file system browser in Java3D. ([Run explore3d.jar][j-e-run])
-
-[graphics][j-g]: Some graphical scenes in Java3D. I especially like the colorfulMöbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][j-g-run])
-
+[checkers][j-c]: A checkers game that plays much better than I do. ([Run checkers.jar][j-c-run])  
+[explore3d][j-e]: A 3d file system browser in Java3D. ([Run explore3d.jar][j-e-run])  
+[graphics][j-g]: Some graphical scenes in Java3D. I especially like the colorful Möbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][j-g-run])  
 [life][j-l]: Conway's Game Of Life. ([2007][j-l-2007], [2008][j-l-2008], [Run life.jar][j-l-run])
 
 [j-c]:      https://github.com/JoostMolenaar/code/tree/master/java/checkers
@@ -95,13 +85,10 @@ old disks to go...
 
 ## Python ##
 
-[knights][p-k]: Calculates a knight's tour on a variously-sized chess boards.
-
-[life][p-l1]: Conway's Game Of Life.
-
-[logigram][p-l2]: Logigram solver.
-
-[sudoku][p-s]: A Sudoku solver that supports all kinds of weird variations on Sudoku. ([2005][p-s-2005], [2008][p-s-2008])
+[knights][p-k]: Calculates a knight's tour on a variously-sized chess boards.  
+[life][p-l1]: Conway's Game Of Life.  
+[logigram][p-l2]: Logigram solver.  
+[sudoku][p-s]: A Sudoku solver that supports all kinds of weird variations on Sudoku (diagonal, shaped and mixed). ([2005][p-s-2005], [2008][p-s-2008])
 
 [p-k]:      https://github.com/joostmolenaar/code/tree/master/python/knights
 [p-l1]:     https://github.com/JoostMolenaar/code/tree/master/python/life
