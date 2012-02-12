@@ -15,94 +15,98 @@ old disks to go...
 
 ## Assembler ##
 
-bfc
+[bfc][a-b1]: Brainfuck compiler
 
-bfi
+[bfi][a-b2]: Brainfuck interpreter
 
-linux
+[linux][a-l]: Experiments in Linux assembly
+
+[a-b1]: https://github.com/JoostMolenaar/code/tree/master/asm/bfc
+[a-b2]: https://github.com/JoostMolenaar/code/tree/master/asm/bfi
+[a-l]: https://github.com/JoostMolenaar/code/tree/master/asm/linux
 
 ## Bash ##
 
-brainfuck
+[brainfuck][b-b]: Brainfuck interpreter and optimizing compiler
+
+[b-b]: https://github.com/JoostMolenaar/code/tree/master/bash/brainfuck
 
 ## Brainfuck ##
 
-\*.bfA
+[\*.bf][bf]: Various Brainfuck programs
+
+[bf]: https://github.com/JoostMolenaar/code/tree/master/bf
 
 ## C++ ##
 
-observer
+[observer][cpp-o]
 
-qt
+[qt][cpp-qt]
+
+[cpp-o]: https://github.com/JoostMolenaar/code/tree/master/cpp/observer]
+[cpp-qt]: https://github.com/JoostMolenaar/code/tree/master/cpp/qt]
 
 ## C# ##
 
-[kisp][ck]: Kim Il-Sung's Politbyuro, a P2P file sharing
-program with built-in chess game.
+[kisp][cs-k]: Kim Il-Sung's Politbyuro, a P2P file sharing program with built-in chess game.
 
-[ck]: https://github.com/JoostMolenaar/code/tree/master/csharp/kisp
+[cs-k]: https://github.com/JoostMolenaar/code/tree/master/csharp/kisp
 
 ## Delphi ##
 
-[bfide][db1]: Development environment for Brainfuck language.
+[bfide][d-b1]: Development environment for Brainfuck language.
 
-[brainfuck][db2]: Command-line interpreter for Brainfuck language.
+[brainfuck][d-b2]: Command-line interpreter for Brainfuck language.
 
-[dopewars][dd]: Dope Wars, with lots of crazy features like selling
-kidneys and colorful effects and cheats and whatnot.
+[dopewars][d-d]: Dope Wars, with lots of crazy features like selling kidneys and colorful effects and cheats and whatnot.
 
-lingo
+[lingo][d-l1]: A Lingo game that supports 2-letter-Lingo. At least, a later version does.
 
-[lisp][dl]: A compiler for a LISP-like language called NUMP.
+[lisp][d-l2]: A compiler for a LISP-like language called NUMP.
 
-[dl]: https://github.com/JoostMolenaar/code/tree/master/delphi/lisp
-
-[db1]: https://github.com/JoostMolenaar/code/tree/master/delphi/bfide
-
-[db2]: https://github.com/JoostMolenaar/code/tree/master/delphi/brainfuck
-
-[dd]: https://github.com/JoostMolenaar/code/tree/master/delphi/dopewars
+[d-b1]: https://github.com/JoostMolenaar/code/tree/master/delphi/bfide
+[d-b2]: https://github.com/JoostMolenaar/code/tree/master/delphi/brainfuck
+[d-l1]: https://github.com/JoostMolenaar/code/tree/master/delphi/lingo
+[d-l2]: https://github.com/JoostMolenaar/code/tree/master/delphi/lisp
+[d-d]:  https://github.com/JoostMolenaar/code/tree/master/delphi/dopewars
 
 ## Java ##
 
-[checkers][jc]: A checkers game that plays much better than I do. ([Run checkers.jar][jc-run])
+[checkers][j-c]: A checkers game that plays much better than I do. ([Run checkers.jar][j-c-run])
 
-[explore3d][je]: A 3d file system browser in Java3D. ([Run explore3d.jar][je-run])
+[explore3d][j-e]: A 3d file system browser in Java3D. ([Run explore3d.jar][j-e-run])
 
-[graphics][jg]: Some graphical scenes in Java3D. I especially like the colorful 
-Möbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][jg-run])
+[graphics][j-g]: Some graphical scenes in Java3D. I especially like the colorfulMöbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][j-g-run])
 
-[life][jl]: Conway's Game Of Life. ([2007][jl2007], [2008][jl2008], 
-[Run life.jar][jl-run])
+[life][j-l]: Conway's Game Of Life. ([2007][j-l-2007], [2008][j-l-2008], [Run life.jar][j-l-run])
 
-[jc]: https://github.com/JoostMolenaar/code/tree/master/java/checkers
-[jc-run]: https://github.com/JoostMolenaar/code/blob/master/java/checkers/jar/checkers.jar?raw=true
+[j-c]:      https://github.com/JoostMolenaar/code/tree/master/java/checkers
+[j-e]:      https://github.com/JoostMolenaar/code/tree/master/java/explore3d
+[j-g]:      https://github.com/JoostMolenaar/code/tree/master/java/graphics
+[j-l]:      https://github.com/JoostMolenaar/code/tree/master/java/life
 
-[je]: https://github.com/JoostMolenaar/code/tree/master/java/explore3d
-[je-run]: https://github.com/JoostMolenaar/code/blob/master/java/explore3d/explore3d.jar?raw=true
+[j-c-run]:  https://github.com/JoostMolenaar/code/blob/master/java/checkers/jar/checkers.jar?raw=true
+[j-e-run]:  https://github.com/JoostMolenaar/code/blob/master/java/explore3d/explore3d.jar?raw=true
+[j-g-run]:  https://github.com/JoostMolenaar/code/blob/master/java/graphics/graphics.jar?raw=true
+[j-l-run]:  https://github.com/JoostMolenaar/code/blob/master/java/life/life.jar?raw=true
 
-[jg]: https://github.com/JoostMolenaar/code/tree/master/java/graphics
-[jg-run]: https://github.com/JoostMolenaar/code/blob/master/java/graphics/graphics.jar?raw=true
-
-[jl]: https://github.com/JoostMolenaar/code/tree/master/python/life
-[jl2007]: https://github.com/JoostMolenaar/code/tree/f6141aff/python/life
-[jl2008]: https://github.com/JoostMolenaar/code/tree/1aefe018/python/life
-[jl-run]: https://github.com/JoostMolenaar/code/blob/master/java/life/life.jar?raw=true
+[j-l-2007]: https://github.com/JoostMolenaar/code/tree/f6141aff/java/life
+[j-l-2008]: https://github.com/JoostMolenaar/code/tree/1aefe018/java/life
 
 ## Python ##
 
-[knights][pk]: Calculates a knight's tour on a variously-sized chess boards.
+[knights][p-k]: Calculates a knight's tour on a variously-sized chess boards.
 
-life
+[life][p-l1]: Conway's Game Of Life.
 
-logigram
+[logigram][p-l2]: Logigram solver.
 
-[sudoku][ps]: A Sudoku solver that supports all kinds of weird variations on Sudoku.
-([2005][ps2005], [2008][ps2008])
+[sudoku][p-s]: A Sudoku solver that supports all kinds of weird variations on Sudoku. ([2005][p-s-2005], [2008][p-s-2008])
 
-[pk]: https://github.com/joostmolenaar/code/tree/master/python/knights
+[p-k]:      https://github.com/joostmolenaar/code/tree/master/python/knights
+[p-l1]:     https://github.com/JoostMolenaar/code/tree/master/python/life
+[p-l2]:     https://github.com/JoostMolenaar/code/tree/master/python/logigram
+[p-s]:      https://github.com/JoostMolenaar/code/tree/master/python/sudoku
 
-[ps]: https://github.com/JoostMolenaar/code/tree/master/python/sudoku
-[ps2005]: https://github.com/JoostMolenaar/code/tree/b83af382/python/sudoku
-[ps2008]: https://github.com/JoostMolenaar/code/tree/9b65ec82/python/sudoku
-
+[p-s-2005]: https://github.com/JoostMolenaar/code/tree/b83af382/python/sudoku
+[p-s-2008]: https://github.com/JoostMolenaar/code/tree/9b65ec82/python/sudoku
