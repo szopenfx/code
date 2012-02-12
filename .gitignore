@@ -2,3 +2,4 @@
 *.class
 *.dof
 *.dcu
+*DS_Store*
