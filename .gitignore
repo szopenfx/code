@@ -3,3 +3,4 @@
 *.dof
 *.dcu
 *DS_Store*
+*.o
