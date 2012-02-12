@@ -1,0 +1,285 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package checkers.gui;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.awt.Color;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import java.awt.Frame;<a name="line.4"></a>
+<FONT color="green">005</FONT>    import java.awt.event.WindowAdapter;<a name="line.5"></a>
+<FONT color="green">006</FONT>    import java.awt.event.WindowEvent;<a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    import checkers.Checkers;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import checkers.engine.Move;<a name="line.9"></a>
+<FONT color="green">010</FONT>    import checkers.engine.UndoableMove;<a name="line.10"></a>
+<FONT color="green">011</FONT>    import checkers.enums.Direction;<a name="line.11"></a>
+<FONT color="green">012</FONT>    import checkers.enums.State;<a name="line.12"></a>
+<FONT color="green">013</FONT>    <a name="line.13"></a>
+<FONT color="green">014</FONT>    public class MainFrame extends Frame<a name="line.14"></a>
+<FONT color="green">015</FONT>    {<a name="line.15"></a>
+<FONT color="green">016</FONT>            protected Checkers checkers;<a name="line.16"></a>
+<FONT color="green">017</FONT>            protected Move selection = new Move();<a name="line.17"></a>
+<FONT color="green">018</FONT>    <a name="line.18"></a>
+<FONT color="green">019</FONT>            protected int hover = -1;<a name="line.19"></a>
+<FONT color="green">020</FONT>    <a name="line.20"></a>
+<FONT color="green">021</FONT>            public BoardPanel boardpanel;<a name="line.21"></a>
+<FONT color="green">022</FONT>            public StringPanel movepanel;<a name="line.22"></a>
+<FONT color="green">023</FONT>            public StringPanel possiblepanel;<a name="line.23"></a>
+<FONT color="green">024</FONT>            public StatusPanel statuspanel;<a name="line.24"></a>
+<FONT color="green">025</FONT>            <a name="line.25"></a>
+<FONT color="green">026</FONT>            public MainFrame(Checkers checkers)<a name="line.26"></a>
+<FONT color="green">027</FONT>            {<a name="line.27"></a>
+<FONT color="green">028</FONT>                    this.checkers = checkers;<a name="line.28"></a>
+<FONT color="green">029</FONT>    <a name="line.29"></a>
+<FONT color="green">030</FONT>                    initComponents();<a name="line.30"></a>
+<FONT color="green">031</FONT>                    initEvents();<a name="line.31"></a>
+<FONT color="green">032</FONT>                    initFrame();<a name="line.32"></a>
+<FONT color="green">033</FONT>            }<a name="line.33"></a>
+<FONT color="green">034</FONT>    <a name="line.34"></a>
+<FONT color="green">035</FONT>            private void initComponents()<a name="line.35"></a>
+<FONT color="green">036</FONT>            {<a name="line.36"></a>
+<FONT color="green">037</FONT>                    // board panel<a name="line.37"></a>
+<FONT color="green">038</FONT>                    this.boardpanel = new BoardPanel(checkers.board, new BoardPanel.Observer() {<a name="line.38"></a>
+<FONT color="green">039</FONT>                            public void squareClicked(int coord)<a name="line.39"></a>
+<FONT color="green">040</FONT>                            {<a name="line.40"></a>
+<FONT color="green">041</FONT>                                    if (coord == -1)<a name="line.41"></a>
+<FONT color="green">042</FONT>                                            return;<a name="line.42"></a>
+<FONT color="green">043</FONT>                                    <a name="line.43"></a>
+<FONT color="green">044</FONT>                                    if (selection.size() == 0)<a name="line.44"></a>
+<FONT color="green">045</FONT>                                    {<a name="line.45"></a>
+<FONT color="green">046</FONT>                                            if (checkers.board.getState(coord) != State.EMPTY)<a name="line.46"></a>
+<FONT color="green">047</FONT>                                                    if(checkers.player == checkers.board.getPlayer(coord))<a name="line.47"></a>
+<FONT color="green">048</FONT>                                                            selection.add(coord);<a name="line.48"></a>
+<FONT color="green">049</FONT>                                    }<a name="line.49"></a>
+<FONT color="green">050</FONT>                                    else<a name="line.50"></a>
+<FONT color="green">051</FONT>                                    {<a name="line.51"></a>
+<FONT color="green">052</FONT>                                            if (checkers.board.getState(coord) == State.EMPTY)<a name="line.52"></a>
+<FONT color="green">053</FONT>                                            {<a name="line.53"></a>
+<FONT color="green">054</FONT>                                                    if(! checkers.possible.contains(selection))<a name="line.54"></a>
+<FONT color="green">055</FONT>                                                    {<a name="line.55"></a>
+<FONT color="green">056</FONT>                                                            int lastcoord = selection.lastElement();<a name="line.56"></a>
+<FONT color="green">057</FONT>                                                            if (Math.abs(lastcoord - coord) &gt; 5)<a name="line.57"></a>
+<FONT color="green">058</FONT>                                                                    for (Direction d : Direction.values())<a name="line.58"></a>
+<FONT color="green">059</FONT>                                                                    {<a name="line.59"></a>
+<FONT color="green">060</FONT>                                                                            if (coord - lastcoord == d.jump_shl)<a name="line.60"></a>
+<FONT color="green">061</FONT>                                                                                    selection.add(lastcoord + (coord % 8 &lt; 4 ? d.move_shl_e : d.move_shl_o));<a name="line.61"></a>
+<FONT color="green">062</FONT>                                                                            if (lastcoord - coord == d.jump_shr)<a name="line.62"></a>
+<FONT color="green">063</FONT>                                                                                    selection.add(lastcoord - (coord % 8 &lt; 4 ? d.move_shr_e : d.move_shr_o));<a name="line.63"></a>
+<FONT color="green">064</FONT>                                                                    }<a name="line.64"></a>
+<FONT color="green">065</FONT>                                                            selection.add(coord);<a name="line.65"></a>
+<FONT color="green">066</FONT>                                                    }<a name="line.66"></a>
+<FONT color="green">067</FONT>    <a name="line.67"></a>
+<FONT color="green">068</FONT>                                                    if (checkers.possible.contains(selection))<a name="line.68"></a>
+<FONT color="green">069</FONT>                                                    {<a name="line.69"></a>
+<FONT color="green">070</FONT>                                                            System.out.printf("mainframe selection %s\n", selection);<a name="line.70"></a>
+<FONT color="green">071</FONT>                                                            checkers.doMove(selection.clone());<a name="line.71"></a>
+<FONT color="green">072</FONT>                                                            selection.clear();<a name="line.72"></a>
+<FONT color="green">073</FONT>                                                            return;<a name="line.73"></a>
+<FONT color="green">074</FONT>                                                    }<a name="line.74"></a>
+<FONT color="green">075</FONT>                                            }<a name="line.75"></a>
+<FONT color="green">076</FONT>                                    }<a name="line.76"></a>
+<FONT color="green">077</FONT>                                    <a name="line.77"></a>
+<FONT color="green">078</FONT>                                    System.out.printf("mainframe selection %s\n", selection);<a name="line.78"></a>
+<FONT color="green">079</FONT>                                    boardpanel.repaint();<a name="line.79"></a>
+<FONT color="green">080</FONT>                            }<a name="line.80"></a>
+<FONT color="green">081</FONT>    <a name="line.81"></a>
+<FONT color="green">082</FONT>                            public void squarePointed(int coord)<a name="line.82"></a>
+<FONT color="green">083</FONT>                            {<a name="line.83"></a>
+<FONT color="green">084</FONT>                                    hover = coord;<a name="line.84"></a>
+<FONT color="green">085</FONT>                                    if (statuspanel != null)<a name="line.85"></a>
+<FONT color="green">086</FONT>                                            statuspanel.setSquare(coord);<a name="line.86"></a>
+<FONT color="green">087</FONT>                                    if (boardpanel != null)<a name="line.87"></a>
+<FONT color="green">088</FONT>                                            boardpanel.repaint();<a name="line.88"></a>
+<FONT color="green">089</FONT>                            }<a name="line.89"></a>
+<FONT color="green">090</FONT>                            <a name="line.90"></a>
+<FONT color="green">091</FONT>                            public void squareCanceled()<a name="line.91"></a>
+<FONT color="green">092</FONT>                            {<a name="line.92"></a>
+<FONT color="green">093</FONT>                                    selection.clear();<a name="line.93"></a>
+<FONT color="green">094</FONT>                                    boardpanel.repaint();<a name="line.94"></a>
+<FONT color="green">095</FONT>                            }<a name="line.95"></a>
+<FONT color="green">096</FONT>                            <a name="line.96"></a>
+<FONT color="green">097</FONT>                            public boolean isSquareSelected(int coord)<a name="line.97"></a>
+<FONT color="green">098</FONT>                            {<a name="line.98"></a>
+<FONT color="green">099</FONT>                                    if (selection.contains(coord))<a name="line.99"></a>
+<FONT color="green">100</FONT>                                    {<a name="line.100"></a>
+<FONT color="green">101</FONT>                                            return true;<a name="line.101"></a>
+<FONT color="green">102</FONT>                                    }<a name="line.102"></a>
+<FONT color="green">103</FONT>                                    <a name="line.103"></a>
+<FONT color="green">104</FONT>                                    if (possiblepanel.item &gt; -1 <a name="line.104"></a>
+<FONT color="green">105</FONT>                                            &amp;&amp; possiblepanel.item &lt; checkers.possible.size()<a name="line.105"></a>
+<FONT color="green">106</FONT>                                            &amp;&amp; checkers.possible.get(possiblepanel.item).contains(coord))<a name="line.106"></a>
+<FONT color="green">107</FONT>                                    {<a name="line.107"></a>
+<FONT color="green">108</FONT>                                            return true;<a name="line.108"></a>
+<FONT color="green">109</FONT>                                    }<a name="line.109"></a>
+<FONT color="green">110</FONT>                                    <a name="line.110"></a>
+<FONT color="green">111</FONT>                                    return false;<a name="line.111"></a>
+<FONT color="green">112</FONT>                            }<a name="line.112"></a>
+<FONT color="green">113</FONT>                            <a name="line.113"></a>
+<FONT color="green">114</FONT>                            public boolean isSquareLastMoved(int coord)<a name="line.114"></a>
+<FONT color="green">115</FONT>                            {<a name="line.115"></a>
+<FONT color="green">116</FONT>                                    return (checkers.lastdisp != null &amp;&amp; checkers.lastdisp.contains(coord)) <a name="line.116"></a>
+<FONT color="green">117</FONT>                                            || (checkers.lastdisp == null &amp;&amp; checkers.last != null &amp;&amp; checkers.last.contains(coord));<a name="line.117"></a>
+<FONT color="green">118</FONT>                            }<a name="line.118"></a>
+<FONT color="green">119</FONT>                            <a name="line.119"></a>
+<FONT color="green">120</FONT>                            public boolean isHovered(int coord)<a name="line.120"></a>
+<FONT color="green">121</FONT>                            {<a name="line.121"></a>
+<FONT color="green">122</FONT>                                    return coord != -1 &amp;&amp; hover == coord;<a name="line.122"></a>
+<FONT color="green">123</FONT>                            }<a name="line.123"></a>
+<FONT color="green">124</FONT>    <a name="line.124"></a>
+<FONT color="green">125</FONT>                            public void cleanHover()<a name="line.125"></a>
+<FONT color="green">126</FONT>                            {<a name="line.126"></a>
+<FONT color="green">127</FONT>                                    hover = -1;<a name="line.127"></a>
+<FONT color="green">128</FONT>                            }<a name="line.128"></a>
+<FONT color="green">129</FONT>                    });<a name="line.129"></a>
+<FONT color="green">130</FONT>                    <a name="line.130"></a>
+<FONT color="green">131</FONT>                    // status panel<a name="line.131"></a>
+<FONT color="green">132</FONT>                    this.statuspanel = new StatusPanel(checkers);<a name="line.132"></a>
+<FONT color="green">133</FONT>    <a name="line.133"></a>
+<FONT color="green">134</FONT>                    // move panel<a name="line.134"></a>
+<FONT color="green">135</FONT>                    this.movepanel = new StringPanel("undo", new StringPanel.Observer() {<a name="line.135"></a>
+<FONT color="green">136</FONT>                            public void buttonClicked(int item)<a name="line.136"></a>
+<FONT color="green">137</FONT>                            {<a name="line.137"></a>
+<FONT color="green">138</FONT>                                    System.out.printf("movepanel buttonClicked %d\n", item);<a name="line.138"></a>
+<FONT color="green">139</FONT>                                    checkers.undoMove();<a name="line.139"></a>
+<FONT color="green">140</FONT>                            }<a name="line.140"></a>
+<FONT color="green">141</FONT>    <a name="line.141"></a>
+<FONT color="green">142</FONT>                            public void itemClicked(int item)<a name="line.142"></a>
+<FONT color="green">143</FONT>                            {<a name="line.143"></a>
+<FONT color="green">144</FONT>                                    System.out.printf("movepanel itemClicked %d %s\n", item, checkers.last.getMove(item));<a name="line.144"></a>
+<FONT color="green">145</FONT>                                    if (item == checkers.last.index)<a name="line.145"></a>
+<FONT color="green">146</FONT>                                            itemCanceled();<a name="line.146"></a>
+<FONT color="green">147</FONT>                                    else<a name="line.147"></a>
+<FONT color="green">148</FONT>                                    {<a name="line.148"></a>
+<FONT color="green">149</FONT>                                            UndoableMove last = checkers.last.getMove(item + 1);<a name="line.149"></a>
+<FONT color="green">150</FONT>                                            checkers.lastdisp = last.previous;<a name="line.150"></a>
+<FONT color="green">151</FONT>                                            boardpanel.setBoard(last.board);<a name="line.151"></a>
+<FONT color="green">152</FONT>                                    }<a name="line.152"></a>
+<FONT color="green">153</FONT>                            }<a name="line.153"></a>
+<FONT color="green">154</FONT>    <a name="line.154"></a>
+<FONT color="green">155</FONT>                            public void itemCanceled()<a name="line.155"></a>
+<FONT color="green">156</FONT>                            {<a name="line.156"></a>
+<FONT color="green">157</FONT>                                    checkers.lastdisp = null;<a name="line.157"></a>
+<FONT color="green">158</FONT>                                    boardpanel.setBoard(checkers.board);<a name="line.158"></a>
+<FONT color="green">159</FONT>                            }<a name="line.159"></a>
+<FONT color="green">160</FONT>                    });<a name="line.160"></a>
+<FONT color="green">161</FONT>                    <a name="line.161"></a>
+<FONT color="green">162</FONT>                    // possible panel<a name="line.162"></a>
+<FONT color="green">163</FONT>                    this.possiblepanel = new StringPanel("do", new StringPanel.Observer() {<a name="line.163"></a>
+<FONT color="green">164</FONT>                            public void buttonClicked(int item)<a name="line.164"></a>
+<FONT color="green">165</FONT>                            {<a name="line.165"></a>
+<FONT color="green">166</FONT>                                    System.out.printf("possiblepanel buttonClicked %d\n", item);<a name="line.166"></a>
+<FONT color="green">167</FONT>                                    checkers.doMove(checkers.possible.get(item).clone());<a name="line.167"></a>
+<FONT color="green">168</FONT>                            }<a name="line.168"></a>
+<FONT color="green">169</FONT>    <a name="line.169"></a>
+<FONT color="green">170</FONT>                            public void itemClicked(int item)<a name="line.170"></a>
+<FONT color="green">171</FONT>                            {<a name="line.171"></a>
+<FONT color="green">172</FONT>                                    System.out.printf("possiblepanel itemClicked %d %s\n", item, checkers.possible.get(item));<a name="line.172"></a>
+<FONT color="green">173</FONT>                                    boardpanel.repaint();<a name="line.173"></a>
+<FONT color="green">174</FONT>                            }<a name="line.174"></a>
+<FONT color="green">175</FONT>    <a name="line.175"></a>
+<FONT color="green">176</FONT>                            public void itemCanceled()<a name="line.176"></a>
+<FONT color="green">177</FONT>                            {<a name="line.177"></a>
+<FONT color="green">178</FONT>                                    boardpanel.repaint();<a name="line.178"></a>
+<FONT color="green">179</FONT>                            }<a name="line.179"></a>
+<FONT color="green">180</FONT>                    });<a name="line.180"></a>
+<FONT color="green">181</FONT>            }<a name="line.181"></a>
+<FONT color="green">182</FONT>    <a name="line.182"></a>
+<FONT color="green">183</FONT>            protected void initFrame()<a name="line.183"></a>
+<FONT color="green">184</FONT>            {<a name="line.184"></a>
+<FONT color="green">185</FONT>                    setLayout(null);<a name="line.185"></a>
+<FONT color="green">186</FONT>                    <a name="line.186"></a>
+<FONT color="green">187</FONT>                    add(boardpanel);<a name="line.187"></a>
+<FONT color="green">188</FONT>                    add(movepanel);<a name="line.188"></a>
+<FONT color="green">189</FONT>                    add(possiblepanel);<a name="line.189"></a>
+<FONT color="green">190</FONT>                    add(statuspanel);<a name="line.190"></a>
+<FONT color="green">191</FONT>    <a name="line.191"></a>
+<FONT color="green">192</FONT>                    boardpanel.setBounds(10, 30, 512, 512);<a name="line.192"></a>
+<FONT color="green">193</FONT>                    movepanel.setBounds(532, 30, 258, 256);<a name="line.193"></a>
+<FONT color="green">194</FONT>                    possiblepanel.setBounds(532, 286, 258, 256);<a name="line.194"></a>
+<FONT color="green">195</FONT>                    statuspanel.setBounds(10, 545, 780, 45);<a name="line.195"></a>
+<FONT color="green">196</FONT>                    <a name="line.196"></a>
+<FONT color="green">197</FONT>                    setSize(800, 600);<a name="line.197"></a>
+<FONT color="green">198</FONT>                    setLocationByPlatform(true);<a name="line.198"></a>
+<FONT color="green">199</FONT>                    setBackground(Color.BLACK);<a name="line.199"></a>
+<FONT color="green">200</FONT>                    setVisible(true);<a name="line.200"></a>
+<FONT color="green">201</FONT>                    setTitle("English Draughts");<a name="line.201"></a>
+<FONT color="green">202</FONT>            }<a name="line.202"></a>
+<FONT color="green">203</FONT>            <a name="line.203"></a>
+<FONT color="green">204</FONT>            protected void initEvents()<a name="line.204"></a>
+<FONT color="green">205</FONT>            {<a name="line.205"></a>
+<FONT color="green">206</FONT>                    addWindowListener(new WindowAdapter() {<a name="line.206"></a>
+<FONT color="green">207</FONT>                            public void windowClosing(WindowEvent arg0)<a name="line.207"></a>
+<FONT color="green">208</FONT>                            {<a name="line.208"></a>
+<FONT color="green">209</FONT>                                    /**/<a name="line.209"></a>
+<FONT color="green">210</FONT>                                    System.exit(0);<a name="line.210"></a>
+<FONT color="green">211</FONT>                                    /** /<a name="line.211"></a>
+<FONT color="green">212</FONT>                                    setVisible(false);<a name="line.212"></a>
+<FONT color="green">213</FONT>                                    checkers.clock.stop();<a name="line.213"></a>
+<FONT color="green">214</FONT>                                    new GameStart();<a name="line.214"></a>
+<FONT color="green">215</FONT>                                    /**/<a name="line.215"></a>
+<FONT color="green">216</FONT>                            }<a name="line.216"></a>
+<FONT color="green">217</FONT>                    });<a name="line.217"></a>
+<FONT color="green">218</FONT>            }<a name="line.218"></a>
+<FONT color="green">219</FONT>    }<a name="line.219"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
