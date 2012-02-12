@@ -13,6 +13,28 @@ includes games, experiments with graphics, compilers,
 and a lot of brainfuck for some reason. I still have some 
 old disks to go...
 
+## Assembler ##
+
+bfc
+
+bfi
+
+linux
+
+## Bash ##
+
+brainfuck
+
+## Brainfuck ##
+
+\*.bfA
+
+## C++ ##
+
+observer
+
+qt
+
 ## C# ##
 
 [kisp][ck]: Kim Il-Sung's Politbyuro, a P2P file sharing
@@ -72,6 +94,8 @@ Möbius strip (2.3.5: MoebiusScene). ([Run graphics.jar][jg-run])
 [knights][pk]: Calculates a knight's tour on a variously-sized chess boards.
 
 life
+
+logigram
 
 [sudoku][ps]: A Sudoku solver that supports all kinds of weird variations on Sudoku.
 ([2005][ps2005], [2008][ps2008])
