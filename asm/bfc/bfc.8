@@ -1,0 +1,86 @@
+	jmp start
+
+	; global variables
+	handle		dw 0
+	buffer		dw 0
+	length		dw 0
+	input		dw 0
+	bfcode		dw 0
+
+	; constant string
+	language 	db "+-<>[],."	
+	langsize	equ 8
+
+start:
+	mov buffer, end
+	mov input, end
+	mov bfcode, end
+
+	mov bx, 80h		; get argument
+	add bl, b[bx]
+	inc bx
+	mov b[bx], 0
+
+	mov ax, 3d00h		; open file
+	mov dx, 82h
+	int 21h	
+	mov handle, ax
+
+	mov bx, handle		; read file
+	mov cx, 0001h
+	mov dx, buffer
+
+do_read:
+	mov ah, 3fh		; read one byte from file using handle
+	int 21h
+	cmp ax, cx		; if read was unsuccessful
+	jne end_read
+	inc dx
+	jmp do_read
+
+end_read:
+	mov bx, dx		; store additional 0
+	mov b[bx], 00h
+
+	sub dx, buffer		; store length of buffer
+	mov length, dx
+
+	mov bx, input
+
+move_char:
+	mov al, [bx]		; load character from input
+
+	cmp al, 00h		; jump to done if character = 0
+	je move_done
+
+	inc bx			; point bx to next character
+
+	mov di, offset language	; try to find input character in language
+	mov cx, langsize
+	repne scasb
+	jne move_char		; if not found, do next character
+
+	push bx			; store current character
+	mov bx, bfcode
+	mov ax, di
+	sub ax, offset language	
+	mov b[bx], al
+	inc bx
+	mov bfcode, bx
+	pop bx
+
+	jmp move_char		; do next character
+
+move_done:
+	mov bx, bfcode		; store additional 0
+	mov b[bx], 00h
+
+exit:
+	mov ah, 3eh
+	mov bx, handle
+	int 21h	
+
+	mov ah, 4ch
+	int 21h
+
+end:
