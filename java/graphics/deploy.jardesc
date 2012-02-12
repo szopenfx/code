@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="C:/Documents and Settings/H.J. Janse/Mijn documenten/eclipse/graphics/graphics.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/graphics/deploy.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" useSourceFolders="false"/>
+<manifest generateManifest="true" mainClassHandleIdentifier="=graphics/&lt;graphics{Main.java[Main" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=graphics/&lt;graphics"/>
+<javaElement handleIdentifier="=graphics/&lt;graphics1"/>
+<javaElement handleIdentifier="=graphics/&lt;graphics2"/>
+<javaElement handleIdentifier="=graphics/&lt;graphics3"/>
+<javaElement handleIdentifier="=graphics/&lt;graphics4"/>
+<file path="/graphics/java.policy.applet"/>
+</selectedElements>
+</jardesc>

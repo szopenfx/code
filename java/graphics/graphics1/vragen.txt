@@ -1,0 +1,16 @@
+1.
+
+2.	In het Java3D1_1 programma worden twee rotaties gecombineerd in één TransformGroup. Welke verandering 
+	treedt er op als de volgorde van de vermenigvuldiging omgekeerd uitgevoerd wordt? Pas het programma 
+	zodanig aan dat je het antwoord kunt controleren.
+	
+	Wegens commutativiteit <a * b == b * a>: geen verandering.
+	
+	Is niet zo :-P
+
+3.	Ook 45 graden om Z as draaien
+
+4.	Verplaats de kubus in het programma Java3D1_1 eerst een halve eenheid naar rechts, dan één eenheid naar
+	boven en vervolgens twee eenheden naar achteren. Voor iedere verplaatsing moet een aparte TransformGroup
+	worden gebruikt.
+
