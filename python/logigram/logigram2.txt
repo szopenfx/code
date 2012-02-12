@@ -1,0 +1,37 @@
+# voorbeeld 1: ongelukken
+Persoon: Chantal, Ilse, Max, Paul, Walter
+Oorzaak: Auto, Bromfiets, Hond, Stoeprand, Sloot
+Plaats: Brunssum, Hoensbroek, Klimmen, Nuth, Schinnen
+Gevolg: Niets, Voorwiel, Enkel, Sleutelbeen, Hersenschudding
+
+#
+# Jongen, buiten zijn schuld, Klimmen, ten val, sleutelbeen, niet stoeprand
+#
+#Unequal: Oorzaak/Stoeprand Persoon/Chantal
+#Unequal: Oorzaak/Stoeprand Persoon/Ilse
+#Unequal: Plaats/Klimmen Persoon/Chantal
+#Unequal: Plaats/Klimmen Persoon/Ilse
+#Unequal: Gevolg/Sleutelbeen Persoon/Chantal
+#Unequal: Gevolg/Sleutelbeen Persoon/Ilse
+#Equal: Gevolg/Sleutelbeen Plaats/Klimmen 
+#
+# Hoensbroek lichamelijk letsel
+#
+#
+# Chantal sloot
+#
+#
+# Paul geen verwonding, niet bromfiets
+#
+#
+# Walter Nuth, niet ten val door hond of stoeprand
+#
+#
+# Brunssum gemotoriseerd voertuig
+#
+########
+# Test #
+########
+Equal: Gevolg/Enkel Plaats/Schinnen
+Equal: Gevolg/Enkel Persoon/Max
+Equal: Oorzaak/Hond Persoon/Max
