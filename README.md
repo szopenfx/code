@@ -24,13 +24,14 @@ lingo
 
 ## Java ##
 
-[checkers][jc]: A checkers game
+[checkers][jc]: A checkers game. ([Run it][jc-run])
 
-[explore3d][je]: A 3d file system browser in Java3D. 
+[explore3d][je]: A 3d file system browser in Java3D. ([Run it][je-run])
 
 [graphics][jg]: Some graphical scenes in Java3D. I especially like the colorful Möbius strip.
+([Run it][jg-run])
 
-[life][jl]: Conway's Game Of Life ([2007][jl2007], [2008][jl2008])
+[life][jl]: Conway's Game Of Life. ([2007 version][jl2007], [2008][jl2008] version, [run it][jl-run])
 
 ## Python ##
 
@@ -46,12 +47,18 @@ life
 [dl]: https://github.com/JoostMolenaar/code/tree/master/delphi/lisp
 
 [jc]: https://github.com/JoostMolenaar/code/tree/master/java/checkers
+[jc-run]: https://github.com/JoostMolenaar/code/blob/master/java/checkers/jar/checkers.jar?raw=true
+
 [je]: https://github.com/JoostMolenaar/code/tree/master/java/explore3d
+[je-run]: https://github.com/JoostMolenaar/code/blob/master/java/explore3d/explore3d.jar?raw=true
+
 [jg]: https://github.com/JoostMolenaar/code/tree/master/java/graphics
+[jg-run]: https://github.com/JoostMolenaar/code/blob/master/java/graphics/graphics.jar?raw=true
 
 [jl]: https://github.com/JoostMolenaar/code/tree/master/python/life
 [jl2007]: https://github.com/JoostMolenaar/code/tree/f6141aff/python/life
 [jl2008]: https://github.com/JoostMolenaar/code/tree/1aefe018/python/life
+[jl-run]: https://github.com/JoostMolenaar/code/blob/master/java/life/life.jar?raw=true
 
 [pk]: https://github.com/JoostMolenaar/code/tree/master/python/knights
 
