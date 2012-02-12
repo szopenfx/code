@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>wxwrap.WxWrap</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="wxwrap-module.html">Module&nbsp;wxwrap</a> ::
+        Class&nbsp;WxWrap
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/wxwrap.WxWrap-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="wxwrap.WxWrap-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class WxWrap</h2>
+
+<hr/>
+
+<p>Class for easier creation of wxPython forms.</p>
+Normal usage of wxPython:
+<pre class="literalblock">
+   import wx
+
+   self.app = wx.PySimpleApp()
+   self.frame = wx.Frame(None, title='Example')
+   self.panel = wx.Panel(self.frame)
+   self.szPanel = wx.GridBagSizer()
+   self.szFrame = wx.GridBagSizer()
+   BUTTON_ID = wx.NewID()
+   self.button = wx.Button(self.panel, BUTTON_ID, label='Click me')
+   wx.EVT_BUTTON(self.panel, BUTTON_ID, self.OnButtonClick)
+   self.szPanel.Add(self.button, pos=(0,0), span=(1,2))
+   self.szFrame.Add(self.panel, pos=(0,0))
+   self.panel.SetSizer(self.szPanel)
+   self.panel.SetAutoLayout(True)
+   self.szPanel.Fit(self.panel)
+   self.frame.SetSizer(self.szFrame)
+   self.frame.SetAutoLayout(True)
+   self.szFrame.Fit(self.frame)
+   self.app.MainLoop()
+</pre>
+Usage of WxWrap:
+<pre class="literalblock">
+   import wx, wxwrap
+
+   wxw = wxwrap.WxWrap()
+   self.app = wx.PySimpleApp()
+   self.frame = wxw.NewParent(wx.Frame, title='Example')
+   self.szFrame = wxw.NewSizer(wx.GridBagSizer)
+   self.panel = wxw.NewParent(wx.Panel, gbpos=(0,0))
+   self.szPanel = wxw.NewSizer(wx.GridBagSizer)
+   self.button = wxw.New(wx.Button, label='Click me', gbpos=(0,1), gbspan=(1,2)
+                         OnClick=self.OnButtonClick)
+   wxw.Size(self.panel, self.szPanel)
+   wxw.Size(self.frame, self.szFrame)
+   self.app.MainLoop()
+</pre>
+<hr/>
+
+<p><b>Version:</b> 1.0 (24/10/2005)
+</p>
+
+<p><b>Author:</b> Joost Molenaar
+</p>
+
+<p><b>Contact:</b> j.j.molenaar at gmail dot com
+</p>
+
+<p><b>License:</b> Copyright(c)2005 Joost Molenaar
+</p>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>parent</span>,
+          <span class=summary-sig-arg>sizer</span>)</span></code>
+<br />
+Initialize a WxWrap object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#DefineEvent" class="summary-sig-name"><code>DefineEvent</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Define a generic event.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        <code>class_</code> instance
+</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#New" class="summary-sig-name"><code>New</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>class_</span>,
+          <span class="summary-sig-kwarg">**kwargs</span>)</span></code>
+<br />
+Create a new control with parent <code>self.parent</code> and sizer 
+<code>self.sizer</code>.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        wx.Window object
+</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#NewParent" class="summary-sig-name"><code>NewParent</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kwargs</span>)</span></code>
+<br />
+Create and register new parent control.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        wx.GridBagSizer
+</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#NewSizer" class="summary-sig-name"><code>NewSizer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>class_</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kwargs</span>)</span></code>
+<br />
+Create a new sizer.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#SetParent" class="summary-sig-name"><code>SetParent</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>parent</span>)</span></code>
+<br />
+Set the parent for controls to be created.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#SetSizer" class="summary-sig-name"><code>SetSizer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>sizer</span>)</span></code>
+<br />
+Set the sizer to which controls will be added.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="wxwrap.WxWrap-class.html#Size" class="summary-sig-name"><code>Size</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>container</span>,
+          <span class=summary-sig-arg>sizer</span>)</span></code>
+<br />
+Fit <code>container</code> to size of contents of 
+<code>sizer</code>.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF INSTANCE VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Instance Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+<td><b><a href="wxwrap.WxWrap-class.html#parent"><code>parent</code></a></b>: Reference to object that will be used as parent when creating new 
+objects using <a 
+href="..\private\wxwrap.WxWrap-class.html#__CreateWidget" 
+class="link"><code>__CreateWidget</code></a>.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+<td><b><a href="wxwrap.WxWrap-class.html#sizer"><code>sizer</code></a></b>: Refernce to object that will be used as sizer when registering a new 
+object using <a 
+href="..\private\wxwrap.WxWrap-class.html#__RegisterSizer" 
+class="link"><code>__RegisterSizer</code></a>.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>parent</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>sizer</span>=<span class=sig-default>None</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize a WxWrap object.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>parent</b></code> -
+         Parent to be used when creating controls.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.Window object)</i>
+      <dd><code><b>sizer</b></code> -
+         Sizer to register controls with.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.GridBagSizer object)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="DefineEvent"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">DefineEvent</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>)</span>
+  </h3>
+  Define a generic event. This event can then be bound through the 
+  normal way of providing a keyword argument 
+  <code>OnEvent=self.OnEvent</code>.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Name of event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=str)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="New"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">New</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>class_</span>,
+          <span class="sig-kwarg">**kwargs</span>)</span>
+  </h3>
+  Create a new control with parent <code>self.parent</code> and sizer 
+  <code>self.sizer</code>.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>class_</b></code> -
+         Class of control to create
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.Window class)</i>
+      <dd><code><b>kwargs</b></code> -
+         Must include keyword argument <code>gbpos</code>. Arguments 
+        starting with &quot;gb&quot; will be passed to the GridBagSizer; 
+        arguments starting with &quot;On&quot; will be bound to 
+        events.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=keyword arguments)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        Reference to control object.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=<code>class_</code> instance)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="NewParent"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">NewParent</span>(<span class=sig-arg>self</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kwargs</span>)</span>
+  </h3>
+  Create and register new parent control.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>args</b></code> -
+         Will be passed to <a href="wxwrap.WxWrap-class.html#New" 
+        class="link"><code>New</code></a> call
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=positional arguments)</i>
+      <dd><code><b>kwargs</b></code> -
+         Will be passed to <a href="wxwrap.WxWrap-class.html#New" 
+        class="link"><code>New</code></a> call.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=keyword arguments)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        object returned by <a href="wxwrap.WxWrap-class.html#New" 
+        class="link"><code>New</code></a>
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.Window object)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="NewSizer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">NewSizer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>class_</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kwargs</span>)</span>
+  </h3>
+  Create a new sizer.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>class_</b></code> -
+         Class of sizer (currently only GridBagSizer is supported).
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.GridBagSizer class)</i>
+      <dd><code><b>args</b></code> -
+         Will be passed to constructor of sizer object
+      <dd><code><b>kwargs</b></code> -
+         Wil be passed to constructor of sizer object
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        GridBagSizer object
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.GridBagSizer)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="SetParent"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">SetParent</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>parent</span>)</span>
+  </h3>
+  Set the parent for controls to be created.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>parent</b></code> -
+         Parent for subsequent controls.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.Container object)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="SetSizer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">SetSizer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>sizer</span>)</span>
+  </h3>
+  Set the sizer to which controls will be added.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>sizer</b></code> -
+         Sizer for subsequent controls.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.GridBagSizer object)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Size"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Size</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>container</span>,
+          <span class=sig-arg>sizer</span>)</span>
+  </h3>
+  Fit <code>container</code> to size of contents of 
+  <code>sizer</code>.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>container</b></code> -
+         Container to change size of.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.Window object)</i>
+      <dd><code><b>sizer</b></code> -
+         Sizer to act on container.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.GridBagSizer object)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF INSTANCE VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Instance Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="parent"></a>
+<h3>parent</h3>
+Reference to object that will be used as parent when creating new 
+objects using <a 
+href="..\private\wxwrap.WxWrap-class.html#__CreateWidget" 
+class="link"><code>__CreateWidget</code></a>.
+</td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="sizer"></a>
+<h3>sizer</h3>
+Refernce to object that will be used as sizer when registering a new 
+object using <a 
+href="..\private\wxwrap.WxWrap-class.html#__RegisterSizer" 
+class="link"><code>__RegisterSizer</code></a>.
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Wed Oct 26 01:43:58 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

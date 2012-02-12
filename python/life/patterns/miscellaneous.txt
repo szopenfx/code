@@ -1,0 +1,15 @@
+Queen Bee
+x....
+xxxx.
+.xxxx
+.x..x
+.xxxx
+xxxx.
+x....
+
+Pi-Heptomino
+..x
+.xx
+xx.
+.xx
+..x

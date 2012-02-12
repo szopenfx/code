@@ -1,0 +1,9 @@
+R-Pentomino
+.xx
+xx.
+.x.
+
+Acorn
+.x.....
+...x...
+xx..xxx
