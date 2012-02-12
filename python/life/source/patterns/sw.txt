@@ -1,0 +1,92 @@
+Block 1x1
+x
+
+SW 5x5
+xxx.x
+..x.x
+xxxxx
+x.x..
+x.xxx
+
+SW 7x7
+xxxx..x
+...x..x
+...x..x
+xxxxxxx
+x..x...
+x..x...
+x..xxxx
+
+SW 9x9
+xxxxx...x
+....x...x
+....x...x
+....x...x
+xxxxxxxxx
+x...x....
+x...x....
+x...x....
+x...xxxxx
+
+SW 11x11
+xxxxxx....x
+.....x....x
+.....x....x
+.....x....x
+.....x....x
+xxxxxxxxxxx
+x....x.....
+x....x.....
+x....x.....
+x....x.....
+x....xxxxxx
+
+SW 13x13
+xxxxxxx.....x
+......x.....x
+......x.....x
+......x.....x
+......x.....x
+......x.....x
+xxxxxxxxxxxxx
+x.....x......
+x.....x......
+x.....x......
+x.....x......
+x.....x......
+x.....xxxxxxx
+
+SW 15x15
+xxxxxxxx......x
+.......x......x
+.......x......x
+.......x......x
+.......x......x
+.......x......x
+.......x......x
+xxxxxxxxxxxxxxx
+x......x.......
+x......x.......
+x......x.......
+x......x.......
+x......x.......
+x......x.......
+x......xxxxxxxx
+
+Four space ships
+xxxxxxxx.xxxx.x
+.......x.xxxx.x
+xx..xx.x......x
+xx..xx.x......x
+xx..xx.x.xxxx.x
+xx..xx.x.xxxx.x
+.......x......x
+xxxxxxxxxxxxxxx
+x......x.......
+x.xxxx.x.xx..xx
+x.xxxx.x.xx..xx
+x......x.xx..xx
+x......x.xx..xx
+x.xxxx.x.......
+x.xxxx.xxxxxxxx
+

@@ -262,19 +262,19 @@ class LifeGUI:
         """
         self.frames += 1
         fps = float(self.frames) / (time.time() - self.time)
-        if self.frames > 20:
+        if self.frames > 4:
+            print fps, self.maxfps, self.delay
+            self.OnMaxFPS()
             self.time = time.time()
             self.frames = 0
-        if fps > (self.maxfps + 0.5):
-            self.delay += 1
-        elif fps < (self.maxfps - 0.5)and self.delay > 0:
-            self.delay -= 1
-            if self.delay < 0:
-                self.delay = 0
+        if fps > (self.maxfps + 0.1):
+            self.delay *= 1.01
+        elif fps < (self.maxfps - 0.1)and self.delay > 0:
+            self.delay /= 1.01
         if self.worker.want_abort:
             self.btnStart.SetLabel('Start')
         else:
-            self.btnStart.SetLabel('%.2f fps (%d)' % (fps, self.delay))
+            self.btnStart.SetLabel('%.1f fps (%d)' % (fps, self.delay))
         self.Redraw()
         
     def OnMaxFPS(self, event=None):
@@ -285,12 +285,15 @@ class LifeGUI:
         @type event: NumberEvent
         @todo: Initialize C{self.delay} to a better value.
         """
-        self.maxfps = self.edtMaxFPS.GetValue()
-        if self.maxfps == 0:
-            self.maxfps = 1000000
-            self.delay = 0
-        else:
-            self.delay = 1000 / self.maxfps
+        value = self.edtMaxFPS.GetValue()
+        if self.maxfps != value:
+            if self.maxfps == 0:
+                self.maxfps = 1000000
+                self.delay = 1
+            else:
+                self.maxfps = value
+                self.delay = 1000.0 / value
+
 
     def OnSelectClass(self, event=None):
         """Update the cbxPatterns list when a new class is selected.
@@ -352,6 +355,6 @@ class LifeGUI:
             self.patw, self.path = wh
 
 if __name__ == '__main__':
-    lifegui = LifeGUI(80)
+    lifegui = LifeGUI(111)
     lifegui.app.MainLoop()
     
