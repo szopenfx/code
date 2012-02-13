@@ -1,0 +1,6 @@
+*.pyc
+*.class
+*.dof
+*.dcu
+*DS_Store*
+*.o

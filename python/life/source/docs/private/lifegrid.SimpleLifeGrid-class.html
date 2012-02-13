@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>lifegrid.SimpleLifeGrid</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="lifegrid-module.html">Module&nbsp;lifegrid</a> ::
+        Class&nbsp;SimpleLifeGrid
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/lifegrid.SimpleLifeGrid-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="lifegrid.SimpleLifeGrid-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class SimpleLifeGrid</h2>
+
+<pre class="base-tree">
+<a href="lifegrid.LifeGrid-class.html"><code>LifeGrid</code></a> --+
+           |
+          <b>SimpleLifeGrid</b>
+</pre><br />
+
+<hr/>
+
+<p>Life grid that is readable and correct but not excessively fast.</p>
+Speed of a 70x70 grid:: non-localized: 8 fps localized: 10 fps
+<hr/>
+
+<p><b>Version:</b> 1.0
+</p>
+
+<p><b>Author:</b> Joost Molenaar
+</p>
+
+<p><b>Contact:</b> j.j.molenaar at gmail dot com
+</p>
+
+<p><b>License:</b> Copyright(c)2005 Joost Molenaar
+</p>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.SimpleLifeGrid-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>size</span>,
+          <span class=summary-sig-arg>survival</span>,
+          <span class=summary-sig-arg>birth</span>)</span></code>
+<br />
+Initialize SimpleLifeGrid instance.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.SimpleLifeGrid-class.html#CountNeighbours" class="summary-sig-name"><code>CountNeighbours</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Fill <code>self.count</code> grid with number of neighbours of each 
+cell.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.SimpleLifeGrid-class.html#Iterate" class="summary-sig-name"><code>Iterate</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Advance the life grid by one iteration.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.SimpleLifeGrid-class.html#Reset" class="summary-sig-name"><code>Reset</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Reset SimpleLifeGrid instance to initial state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LifeGrid</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        list
+</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.LifeGrid-class.html#EmptyGrid" class="summary-sig-name"><code>EmptyGrid</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Create an empty life grid.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.LifeGrid-class.html#Get" class="summary-sig-name"><code>Get</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>x</span>,
+          <span class=summary-sig-arg>y</span>)</span></code>
+<br />
+Return the value of a certain x,y coordinate.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="lifegrid.LifeGrid-class.html#Put" class="summary-sig-name"><code>Put</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>x</span>,
+          <span class=summary-sig-arg>y</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+<br />
+Put a value at a certain x,y coordinate.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>size</span>,
+          <span class=sig-arg>survival</span>=<span class=sig-default>[2,&nbsp;3]</span>,
+          <span class=sig-arg>birth</span>=<span class=sig-default>[3]</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize SimpleLifeGrid instance.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>size</b></code> -
+         Size of grid
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=int)</i>
+      <dd><code><b>survival</b></code> -
+         Number of neighbours required for survival.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=list of int)</i>
+      <dd><code><b>birth</b></code> -
+         Number of neighbours required for birth.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=list of int)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="lifegrid.LifeGrid-class.html#__init__"><code>lifegrid.LifeGrid.__init__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="CountNeighbours"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">CountNeighbours</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Fill <code>self.count</code> grid with number of neighbours of each 
+  cell.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Iterate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Iterate</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Advance the life grid by one iteration.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Reset"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Reset</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Reset SimpleLifeGrid instance to initial state.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Wed Oct 26 01:43:58 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

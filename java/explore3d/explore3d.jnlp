@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+"
+  codebase="http://techfreaks.nl/~joost/"
+  href="explore3d">
+
+  <information>
+    <title>Explore3D File System Browser</title>
+    <vendor>J.J. Molenaar, J. Dooper</vendor>
+    <homepage href="http://techfreaks.nl/~joost"/>
+    <description>Explore3D</description>
+    <description kind="short">3D File System Browser</description>
+    <offline-allowed/>
+  </information>
+
+  <security>
+    <all-permissions/>
+  </security>
+
+  <resources>
+    <j2se version="1.5+"/>
+    <jar href="explore3d.jar" main="true"/>
+    <extension href="http://download.java.net/media/java3d/webstart/release/java3d-latest.jnlp"/>
+  </resources>
+
+  <application-desc main-class="explore3d.Explore3D"/>
+</jnlp>

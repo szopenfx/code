@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modelistic Software Ltd. (http://www.modelistic.com) -->
+<jme>
+	<diagram style="defaultProfile.diagramStyle.default" version="1.3.7">
+		<class yLocation="238" xLocation="442" project="explore3d" className="explore3d.Constants"/>
+		<class yLocation="32" xLocation="35" project="explore3d" className="explore3d.DirectoryList"/>
+		<class yLocation="37" xLocation="478" project="explore3d" className="explore3d.Explore3D"/>
+	</diagram>
+</jme>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="C:/Documents and Settings/Joost/Mijn documenten/Java/checkers/jar/checkers-src.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/checkers/jar-src.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="true"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <selectedElements exportClassFiles="false" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/checkers/.project"/>
+        <javaElement handleIdentifier="=checkers/src"/>
+        <file path="/checkers/.classpath"/>
+        <file path="/checkers/jar-doc.jardesc"/>
+        <file path="/checkers/javadoc.xml"/>
+        <file path="/checkers/jar-src.jardesc"/>
+        <folder path="/checkers/.settings"/>
+        <file path="/checkers/jar-class.jardesc"/>
+    </selectedElements>
+</jardesc>

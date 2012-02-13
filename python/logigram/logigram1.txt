@@ -1,0 +1,16 @@
+Leeftijd: 16, 23, 26
+Kleur: Blauw, Geel, Rood
+Naam: Anke, Helma, Marion
+
+# 1
+Comparison: Naam/Marion Naam/Helma Leeftijd >
+Unequal: Naam/Marion Leeftijd/16
+Unequal: Naam/Helma Leeftijd/26
+#
+# 2
+Equal: Kleur/Rood Leeftijd/23
+#
+# 3
+Equal: Naam/Anke Kleur/Blauw
+Unequal: Naam/Anke Leeftijd/16
+Unequal: Kleur/Blauw Leeftijd/16

@@ -1,0 +1,17 @@
+EXTERN sys_write
+EXTERN lx_open_rw
+EXTERN lx_close
+EXTERN lx_write
+EXTERN lx_write_fd
+EXTERN lx_lseek
+EXTERN lx_mmap
+EXTERN lx_msync
+EXTERN lx_munmap
+EXTERN lx_madvise_sequential
+EXTERN lx_madvise_normal
+EXTERN lx_mremap
+EXTERN lx_exit
+EXTERN lx_fsync
+EXTERN STDIN_FILENO
+EXTERN STDOUT_FILENO
+EXTERN STDERR_FILENO

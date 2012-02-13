@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>life.LifeGUI</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="life-module.html">Module&nbsp;life</a> ::
+        Class&nbsp;LifeGUI
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/life.LifeGUI-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="life.LifeGUI-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class LifeGUI</h2>
+
+<hr/>
+
+Class for operating Conways' Game of Life.
+<hr/>
+
+<p><b>Version:</b> 1.0
+</p>
+
+<p><b>Author:</b> Joost Molenaar
+</p>
+
+<p><b>Contact:</b> j.j.molenaar at gmail dot com
+</p>
+
+<p><b>License:</b> Copyright(c)2005 Joost Molenaar
+</p>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>size</span>,
+          <span class=summary-sig-arg>app</span>)</span></code>
+<br />
+Initialize LifeGUI instance.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#CreateWidgets" class="summary-sig-name"><code>CreateWidgets</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Create wxPython widgets using <a href="wxwrap.WxWrap-class.html" 
+class="link"><code>wxwrap.WxWrap</code></a>.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#GetSizeOfPattern" class="summary-sig-name"><code>GetSizeOfPattern</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Look up the size of the current pattern.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnClear" class="summary-sig-name"><code>OnClear</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Reset the lifegrid.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnErase" class="summary-sig-name"><code>OnErase</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Do absolutely nothing; especially don't make the frame empty when 
+Windows requests so.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnLeftUp" class="summary-sig-name"><code>OnLeftUp</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Put a pattern from the lexicon in the lifegrid when mouse is 
+clicked.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnMaxFPS" class="summary-sig-name"><code>OnMaxFPS</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Store the maximum number of frames per second that's desired by the 
+user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnMotion" class="summary-sig-name"><code>OnMotion</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Store the current X and Y value of the mouse pointer when mouse is 
+moved.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnPaint" class="summary-sig-name"><code>OnPaint</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Blit the bitmap onto the wx.PaintDC.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnResult" class="summary-sig-name"><code>OnResult</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Update the state of the panel when the <a 
+href="life.Worker-class.html" class="link"><code>Worker</code></a> thread 
+has made an iteration.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnSelectClass" class="summary-sig-name"><code>OnSelectClass</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Update the cbxPatterns list when a new class is selected.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnSelectPattern" class="summary-sig-name"><code>OnSelectPattern</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Store the size of the currently selected pattern.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnSelectRotation" class="summary-sig-name"><code>OnSelectRotation</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Store the size of the currently selected pattern; adjusted for the 
+selected rotation.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnStart" class="summary-sig-name"><code>OnStart</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Start the worker thread when btnStart is clicked.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnStep" class="summary-sig-name"><code>OnStep</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Advance the CA one iteration - when btnStep is clicked.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#OnStop" class="summary-sig-name"><code>OnStop</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>event</span>)</span></code>
+<br />
+Stop the worker thread by calling <a 
+href="life.Worker-class.html#abort" 
+class="link"><code>Worker.abort</code></a></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="life.LifeGUI-class.html#Redraw" class="summary-sig-name"><code>Redraw</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Draw the state of the CA on a bitmap using a wx.MemoryDC, then make a 
+PaintEvent happen so that <a href="life.LifeGUI-class.html#OnPaint" 
+class="link"><code>OnPaint</code></a> will get called.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>size</span>,
+          <span class=sig-arg>app</span>=<span class=sig-default>None</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize LifeGUI instance.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>size</b></code> -
+         Length of the sides of the grid
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=int)</i>
+      <dd><code><b>app</b></code> -
+         wxApplication object (will be created if neccessary)
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=wx.PySimpleApp())</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="CreateWidgets"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">CreateWidgets</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Create wxPython widgets using <a href="wxwrap.WxWrap-class.html" 
+  class="link"><code>wxwrap.WxWrap</code></a>.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="GetSizeOfPattern"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">GetSizeOfPattern</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Look up the size of the current pattern.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnClear"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnClear</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Reset the lifegrid.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Button click event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ButtonClick)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnErase"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnErase</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Do absolutely nothing; especially don't make the frame empty when 
+  Windows requests so.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Erase event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=EraseEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnLeftUp"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnLeftUp</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Put a pattern from the lexicon in the lifegrid when mouse is 
+  clicked.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         LeftUp event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=LeftUpEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnMaxFPS"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnMaxFPS</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Store the maximum number of frames per second that's desired by the 
+  user. Also initialize the delay for the sleep call to a more or less 
+  sensible value (is always to high due to genuine processing time.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         wx.lib.masked.Number event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=NumberEvent)</i>
+      </dd>
+    </dl>
+<p><b>To Do:</b> Initialize <code>self.delay</code> to a better value.
+</p>
+
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnMotion"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnMotion</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Store the current X and Y value of the mouse pointer when mouse is 
+  moved.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Motion event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=MotionEvent)</i>
+      </dd>
+    </dl>
+<p><b>To Do:</b> Disable this event when simulation is running.
+</p>
+
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnPaint"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnPaint</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Blit the bitmap onto the wx.PaintDC.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Paint event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=PaintEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnResult"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnResult</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Update the state of the panel when the <a 
+  href="life.Worker-class.html" class="link"><code>Worker</code></a> 
+  thread has made an iteration. Also adjust the delay time so that the 
+  simulation runs at the desired frame rate.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Result event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ResultEvent (defined by <a 
+              href="wxwrap.WxWrap-class.html#DefineEvent" 
+              class="link"><code>wxwrap.WxWrap.DefineEvent</code></a> in 
+              <a href="life.LifeGUI-class.html#CreateWidgets" 
+              class="link"><code>LifeGUI.CreateWidgets</code></a>)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnSelectClass"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnSelectClass</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Update the cbxPatterns list when a new class is selected.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Combobox event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ComboboxEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnSelectPattern"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnSelectPattern</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Store the size of the currently selected pattern.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Combobox event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ComboboxEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnSelectRotation"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnSelectRotation</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Store the size of the currently selected pattern; adjusted for the 
+  selected rotation.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Combobox event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ComboboxEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnStart"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnStart</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Start the worker thread when btnStart is clicked.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Button click event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ButtonClick)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnStep"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnStep</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Advance the CA one iteration - when btnStep is clicked.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Button click event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ButtonEvent)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OnStop"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OnStop</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>event</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Stop the worker thread by calling <a 
+  href="life.Worker-class.html#abort" 
+  class="link"><code>Worker.abort</code></a>
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>event</b></code> -
+         Button click event
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=ButtonClick)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Redraw"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Redraw</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Draw the state of the CA on a bitmap using a wx.MemoryDC, then make 
+  a PaintEvent happen so that <a href="life.LifeGUI-class.html#OnPaint" 
+  class="link"><code>OnPaint</code></a> will get called.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Wed Oct 26 01:43:58 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

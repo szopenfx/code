@@ -1,0 +1,1 @@
+for y in a b c d e f g h ; do for x in 1 2 3 4 5 6 7 8; do knights.py -g -b 8 -s 8 -d .984375 ${y}${x} & done ; done

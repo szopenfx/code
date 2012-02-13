@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modelistic Software Ltd. (http://www.modelistic.com) -->
+<jme>
+	<diagram style="defaultProfile.diagramStyle.default" version="1.3.7">
+		<class yLocation="279" xLocation="565" project="explore3d" className="explore3d.progress.ConsoleProgress"/>
+		<class yLocation="54" xLocation="15" project="explore3d" className="explore3d.progress.Progress"/>
+		<class yLocation="63" xLocation="579" project="explore3d" className="explore3d.progress.ProgressReporter"/>
+	</diagram>
+</jme>
